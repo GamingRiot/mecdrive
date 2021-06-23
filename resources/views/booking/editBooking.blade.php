@@ -76,8 +76,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="state">Multiple Select</label>
-                                <select class="form-control" id="state" name="state[]" multiple>
-                                    <option value="Andhra Pradesh" >Andhra Pradesh</option>
+                                <select class="form-control sel" id="state" name="state[]" multiple>
+                                    <option value="Andhra Pradesh"> Andhra Pradesh</option>
                                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                                     <option value="Assam">Assam</option>

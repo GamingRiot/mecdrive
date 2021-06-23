@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ asset('js/plugins/ion-rangeslider/css/ion.rangeSlider.css') }}">
     <link rel="stylesheet" href="{{ asset('js/plugins/dropzone/dist/min/dropzone.min.css') }}">
     <link rel="stylesheet" href="{{ asset('js/plugins/flatpickr/flatpickr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/chosen.min.css') }}">
 
     <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
     <!-- <link rel="stylesheet" id="css-theme" href="{{ mix('/css/themes/amethyst.css') }}"> -->
@@ -38,7 +39,6 @@
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode(['csrfToken' => csrf_token()]) !!};
-
     </script>
 </head>
 
@@ -643,6 +643,8 @@
     <!-- OneUI Core JS -->
     <script src="{{ mix('js/oneui.app.js') }}"></script>
     <script src="{{ asset('js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('js/chosen.jquery.js') }}"></script>
+    <script src="{{ asset('js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js') }}"></script>
     <script src="{{ asset('js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js') }}"></script>
     <script src="{{ asset('js/plugins/select2/js/select2.full.min.js') }}"></script>
@@ -664,7 +666,11 @@
                 }
             });
         });
-
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.sel').chosen();
+        });
     </script>
     <script>
         jQuery(function() {
@@ -672,7 +678,6 @@
                 'rangeslider'
             ]);
         });
-
     </script>
     <!-- Laravel Scaffolding JS -->
     <!-- <script src="{{ mix('/js/laravel.app.js') }}"></script> -->

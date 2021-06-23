@@ -35,6 +35,10 @@
                     <div class="row push">
                         <div class="col-lg-8 col-xl-8">
                             <div class="form-group">
+                                <label for="title">Number of Display Units</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+                            </div>
+                            <div class="form-group">
                                 <label for="date">Date of Pre-Booking</label>
                                 <input type="text" class="js-flatpickr form-control bg-white" id="date" name="date"
                                     placeholder="Y-m-d">
@@ -77,7 +81,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="state">Multiple Select</label>
-                                <select class="form-control" id="state" name="state[]" multiple>
+                                <select class="form-control sel" id="state" name="state[]" multiple>
                                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>

@@ -16,12 +16,12 @@ class CreatePreBookingsTable extends Migration
         Schema::create('pre_bookings', function (Blueprint $table) {
             $table->id();
             $table->string('slot');
+            $table->string('title');
             $table->integer('display');
             $table->integer('real');
             $table->integer('price');
             $table->date('date');
             $table->time('start_time');
-            // $table->time('interval');
             $table->time('end_time');
             $table->text('state');
             $table->timestamps();
