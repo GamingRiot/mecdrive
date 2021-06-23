@@ -679,6 +679,24 @@
             ]);
         });
     </script>
+    {{-- <script>
+        document.getElementById("slt") = function() {
+            document.getElementById("sltprice").disabled = true;
+        }
+
+        document.getElementById('slt').onchange = function() {
+            if (this.value === 'FR') {
+                document.getElementById("sltprice").disabled = true;
+            } else {
+                document.getElementById("sltprice").disabled = false;
+            }
+        }
+    </script> --}}
+    <script>
+        document.getElementById('slot').onchange = function() {
+            document.getElementById("price").disabled = (this.value === 'FR');
+        }
+    </script>
     <!-- Laravel Scaffolding JS -->
     <!-- <script src="{{ mix('/js/laravel.app.js') }}"></script> -->
 

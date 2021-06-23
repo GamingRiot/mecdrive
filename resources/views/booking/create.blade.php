@@ -58,7 +58,7 @@
                             <div class="form-group">
                                 <label for="slot">Select</label>
                                 <select class="selectpicker form-control" id="slot" name="slot">
-                                    <option value="FR">FREE</option>
+                                    <option value="FR" selected>FREE</option>
                                     <option value="RT">RENTAL</option>
                                     <option value="SL">SALE</option>
                                 </select>
@@ -77,7 +77,7 @@
                             <div class="form-group">
                                 <label for="price">Price(in Rs.)</label>
                                 <input type="text" class="form-control" id="price" name="price"
-                                    placeholder="Enter PreBooking Price">
+                                    placeholder="Enter PreBooking Price" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="state">Multiple Select</label>

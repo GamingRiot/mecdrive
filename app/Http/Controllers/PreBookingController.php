@@ -27,7 +27,7 @@ class PreBookingController extends Controller
             'display' => 'required|integer',
             'real' => 'required|integer',
             'state' => 'required',
-            'price' => 'required|integer',
+            'price' => 'integer',
             'title' => 'required|min:3'
         ]);
         $booking = new PreBooking($validatedRequest);
