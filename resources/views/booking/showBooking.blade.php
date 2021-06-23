@@ -30,26 +30,30 @@
                         </div>
                     @endif
                     @forelse ($bookings->reverse() as $booking)
-                        <tr>
-                            <th class="text-center" scope="row">{{ $loop->iteration }}</th>
-                            <td class="font-w600 font-size-sm">
-                                <a href="{{ route('booking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
-                            </td>
-                            <td class="d-none d-sm-table-cell">
-                            </td>
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
-                                            class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
-                                            <i class="fa fa-fw fa-pencil-alt"></i>
-                                        </button></a>
-                                    <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button type="button"
-                                            class="btn btn-sm btn-light" data-toggle="tooltip" title="Remove Booking">
-                                            <i class="fa fa-fw fa-times"></i>
-                                        </button></a>
-                                </div>
-                            </td>
-                        </tr>
+                        @if (date('Y-m-d', strtotime($booking['date'])) == date('Y-m-d'))
+                            <tr>
+                                <th class="text-center" scope="row">{{ $loop->iteration }}</th>
+                                <td class="font-w600 font-size-sm">
+                                    <a
+                                        href="{{ route('booking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
+                                </td>
+                                <td class="d-none d-sm-table-cell">
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
+                                                class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
+                                                <i class="fa fa-fw fa-pencil-alt"></i>
+                                            </button></a>
+                                        <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button
+                                                type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
+                                                title="Remove Booking">
+                                                <i class="fa fa-fw fa-times"></i>
+                                            </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endif
                     @empty
                         <div>No PreBookings Created</div>
                     @endforelse
@@ -84,26 +88,30 @@
                         </div>
                     @endif
                     @forelse ($bookings->reverse() as $booking)
-                        <tr>
-                            <th class="text-center" scope="row">{{ $loop->iteration }}</th>
-                            <td class="font-w600 font-size-sm">
-                                <a href="{{ route('booking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
-                            </td>
-                            <td class="d-none d-sm-table-cell">
-                            </td>
-                            <td class="text-center">
-                                <div class="btn-group">
-                                    <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
-                                            class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
-                                            <i class="fa fa-fw fa-pencil-alt"></i>
-                                        </button></a>
-                                    <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button type="button"
-                                            class="btn btn-sm btn-light" data-toggle="tooltip" title="Remove Booking">
-                                            <i class="fa fa-fw fa-times"></i>
-                                        </button></a>
-                                </div>
-                            </td>
-                        </tr>
+                        @if (date('Y-m-d', strtotime($booking['date'])) > date('Y-m-d'))
+                            <tr>
+                                <th class="text-center" scope="row">{{ $loop->iteration }}</th>
+                                <td class="font-w600 font-size-sm">
+                                    <a
+                                        href="{{ route('booking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
+                                </td>
+                                <td class="d-none d-sm-table-cell">
+                                </td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
+                                                class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
+                                                <i class="fa fa-fw fa-pencil-alt"></i>
+                                            </button></a>
+                                        <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button
+                                                type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
+                                                title="Remove Booking">
+                                                <i class="fa fa-fw fa-times"></i>
+                                            </button></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endif
                     @empty
                         <div>No PreBookings Created</div>
                     @endforelse
@@ -138,16 +146,17 @@
                         </div>
                     @endif
                     @forelse ($bookings->reverse() as $booking)
-                        <tr>
-                            <th class="text-center" scope="row">{{ $loop->iteration }}</th>
-                            <td class="font-w600 font-size-sm">
-                                <a
-                                    href="{{ route('booking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
-                            </td>
-                            <td class="d-none d-sm-table-cell">
-                            </td>
-                            <td class="text-center">
-                                {{-- <div class="btn-group">
+                        @if (date('Y-m-d', strtotime($booking['date'])) < date('Y-m-d'))
+                            <tr>
+                                <th class="text-center" scope="row">{{ $loop->iteration }}</th>
+                                <td class="font-w600 font-size-sm">
+                                    <a
+                                        href="{{ route('booking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
+                                </td>
+                                <td class="d-none d-sm-table-cell">
+                                </td>
+                                <td class="text-center">
+                                    {{-- <div class="btn-group">
                                     <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
                                             class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
                                             <i class="fa fa-fw fa-pencil-alt"></i>
@@ -157,8 +166,9 @@
                                             <i class="fa fa-fw fa-times"></i>
                                         </button></a>
                                 </div> --}}
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
+                        @endif
                     @empty
                         <div>No PreBookings Created</div>
                     @endforelse

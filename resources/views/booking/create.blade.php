@@ -35,7 +35,7 @@
                     <div class="row push">
                         <div class="col-lg-8 col-xl-8">
                             <div class="form-group">
-                                <label for="title">Number of Display Units</label>
+                                <label for="title">Title </label>
                                 <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
                             </div>
                             <div class="form-group">
