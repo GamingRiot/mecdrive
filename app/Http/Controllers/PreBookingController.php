@@ -49,7 +49,6 @@ class PreBookingController extends Controller
         $user->display = request()->input('display');
         $user->real = request()->input('real');
         $user->price = request()->input('price');
-        $user->city = request()->input('city');
         $user->save();
         return redirect()->back()->with("success", "Update Successful!");
     }
