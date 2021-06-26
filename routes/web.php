@@ -30,14 +30,17 @@ Route::get("/signout", function () {
 Route::get('/create', [PreBookingController::class, 'create'])->middleware("auth");
 Route::post('/create', [PreBookingController::class, 'store'])->middleware("auth");
 Route::get('/bookings', [PreBookingController::class, 'index'])->middleware("auth");
-Route::get('/edit/{booking}', [PreBookingController::class, 'edit'])->middleware("auth")->name("edit");
-Route::post('/edit/{booking}', [PreBookingController::class, 'update'])->middleware("auth");
+Route::get('/upcomingedit/{booking}', [PreBookingController::class, 'upcomeEdit'])->middleware("auth")->name("upcome");
+Route::post('/upcomingedit/{booking}', [PreBookingController::class, 'upcomeUpdate'])->middleware("auth");
+Route::get('/liveedit/{booking}', [PreBookingController::class, 'liveEdit'])->middleware("auth")->name("live");
+Route::post('/liveedit/{booking}', [PreBookingController::class, 'liveUpdate'])->middleware("auth");
+Route::get('/prevedit/{booking}', [PreBookingController::class, 'prevEdit'])->middleware("auth")->name("prev");
 Route::get('/delete/{booking}', [PreBookingController::class, 'destroy'])->middleware("auth")->name("delete");
 Route::match(['get', 'post'], '/dashboard', function () {
     return view('dashboard');
 });
 Route::get('/bookings/{booking}', [PreBookingController::class, 'showBooking'])->middleware("auth")->name("booking");
-Route::get('/prebooking', [PreBookingClientController::class, 'create'])->middleware("auth");
+Route::get('/prebooking', [PreBookingClientController::class, 'index'])->middleware("auth");
 
 Route::view('/pages/slick', 'pages.slick');
 Route::view('/pages/datatables', 'pages.datatables');

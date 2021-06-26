@@ -236,58 +236,8 @@
             <!-- Sidebar Scrolling -->
             <div class="js-sidebar-scroll">
                 <!-- Side Navigation -->
-                <div class="content-side">
-                    <ul class="nav-main">
-                        <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('dashboard') ? ' active' : '' }}"
-                                href="/dashboard">
-                                <i class="nav-main-link-icon si si-cursor"></i>
-                                <span class="nav-main-link-name">Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('bookings') ? ' active' : '' }}"
-                                href="/bookings">
-                                <i class="nav-main-link-icon si si-bulb"></i>
-                                <span class="nav-main-link-name">All Bookings</span>
-                            </a>
-                        </li>
-                        <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('create') ? ' active' : '' }}" href="/create">
-                                <i class="nav-main-link-icon si si-bulb"></i>
-                                <span class="nav-main-link-name">Create Pre-booking</span>
-                            </a>
-                        </li>
 
-                        <li class="nav-main-item{{ request()->is('pages/*') ? ' open' : '' }}">
-
-                            <ul class="nav-main-submenu">
-                                <li class="nav-main-item">
-                                    <a class="nav-main-link{{ request()->is('pages/datatables') ? ' active' : '' }}"
-                                        href="/pages/datatables">
-                                        <span class="nav-main-link-name">DataTables</span>
-                                    </a>
-                                </li>
-                                <li class="nav-main-item">
-                                    <a class="nav-main-link{{ request()->is('pages/slick') ? ' active' : '' }}"
-                                        href="/pages/slick">
-                                        <span class="nav-main-link-name">Slick Slider</span>
-                                    </a>
-                                </li>
-                                <li class="nav-main-item">
-                                    <a class="nav-main-link{{ request()->is('pages/blank') ? ' active' : '' }}"
-                                        href="/pages/blank">
-                                        <span class="nav-main-link-name">Blank</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </div>
-                <!-- END Side Navigation -->
-            </div>
-            <!-- END Sidebar Scrolling -->
+                <!-- END Sidebar Scrolling -->
         </nav>
         <!-- END Sidebar -->
 
@@ -307,41 +257,21 @@
 
                     <!-- Toggle Mini Sidebar -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                    <button type="button" class="btn btn-sm btn-dual mr-2 d-none d-lg-inline-block" data-toggle="layout"
-                        data-action="sidebar_mini_toggle">
-                        <i class="fa fa-fw fa-ellipsis-v"></i>
-                    </button>
+
                     <!-- END Toggle Mini Sidebar -->
 
                     <!-- Apps Modal -->
                     <!-- Opens the Apps modal found at the bottom of the page, after footer’s markup -->
-                    <button type="button" class="btn btn-sm btn-dual mr-2" data-toggle="modal"
-                        data-target="#one-modal-apps">
-                        <i class="fa fa-fw fa-cubes"></i>
-                    </button>
+
                     <!-- END Apps Modal -->
 
                     <!-- Open Search Section (visible on smaller screens) -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                    <button type="button" class="btn btn-sm btn-dual d-sm-none" data-toggle="layout"
-                        data-action="header_search_on">
-                        <i class="fa fa-fw fa-search"></i>
-                    </button>
+
                     <!-- END Open Search Section -->
 
                     <!-- Search Form (visible on larger screens) -->
-                    <form class="d-none d-sm-inline-block" action="/dashboard" method="POST">
-                        @csrf
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control form-control-alt" placeholder="Search.."
-                                id="page-header-search-input2" name="page-header-search-input2">
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-body border-0">
-                                    <i class="fa fa-fw fa-search"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </form>
+
                     <!-- END Search Form -->
                 </div>
                 <!-- END Left Section -->
@@ -367,6 +297,25 @@
                                 <p class="mb-0 text-white-50 font-size-sm">Web Developer</p>
                             </div>
                             <div class="p-2">
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Inbox</span>
+                                    <span class="badge badge-pill badge-primary ml-2">3</span>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Profile</span>
+                                    <span class="badge badge-pill badge-primary ml-2">1</span>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Settings</span>
+                                </a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Lock Account</span>
+                                </a>
                                 <a class="dropdown-item d-flex align-items-center justify-content-between"
                                     href="/signout">
                                     <span class="font-size-sm font-w500">Log Out</span>

@@ -41,15 +41,15 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
+                                        <a href="{{ route('live', ['booking' => $booking->id]) }}"><button type="button"
                                                 class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
                                                 <i class="fa fa-fw fa-pencil-alt"></i>
                                             </button></a>
-                                        <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button
+                                        {{-- <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button
                                                 type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
                                                 title="Remove Booking">
                                                 <i class="fa fa-fw fa-times"></i>
-                                            </button></a>
+                                            </button></a> --}}
                                     </div>
                                 </td>
                             </tr>
@@ -99,7 +99,7 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
+                                        <a href="{{ route('upcome', ['booking' => $booking->id]) }}"><button type="button"
                                                 class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
                                                 <i class="fa fa-fw fa-pencil-alt"></i>
                                             </button></a>
@@ -156,16 +156,17 @@
                                 <td class="d-none d-sm-table-cell">
                                 </td>
                                 <td class="text-center">
-                                    {{-- <div class="btn-group">
-                                    <a href="{{ route('edit', ['booking' => $booking->id]) }}"><button type="button"
-                                            class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
-                                            <i class="fa fa-fw fa-pencil-alt"></i>
-                                        </button></a>
-                                    <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button type="button"
-                                            class="btn btn-sm btn-light" data-toggle="tooltip" title="Remove Booking">
-                                            <i class="fa fa-fw fa-times"></i>
-                                        </button></a>
-                                </div> --}}
+                                    <div class="btn-group">
+                                        <a href="{{ route('prev', ['booking' => $booking->id]) }}"><button type="button"
+                                                class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
+                                                <i class="fa fa-fw fa-pencil-alt"></i>
+                                            </button></a>
+                                        {{-- <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button
+                                                type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
+                                                title="Remove Booking">
+                                                <i class="fa fa-fw fa-times"></i>
+                                            </button></a> --}}
+                                    </div>
                                 </td>
                             </tr>
                         @endif

@@ -35,11 +35,11 @@ class PreBookingController extends Controller
         $booking->save();
         return redirect()->back()->with("success", "PreBooking Created!");
     }
-    public function edit(PreBooking $booking)
+    public function upcomeEdit(PreBooking $booking)
     {
-        return view("booking.editBooking", compact("booking"));
+        return view("booking.upcomeEdit", compact("booking"));
     }
-    public function update(PreBooking $booking)
+    public function upcomeUpdate(PreBooking $booking)
     {
         $user = PreBooking::where("id", $booking->id)->first();
         $user->date = request()->input('date');
@@ -53,6 +53,22 @@ class PreBookingController extends Controller
         $user->save();
         return redirect()->back()->with("success", "Update Successful!");
     }
+    public function liveEdit(PreBooking $booking)
+    {
+        return view("booking.liveEdit", compact("booking"));
+    }
+    public function liveUpdate(PreBooking $booking)
+    {
+        $user = PreBooking::where("id", $booking->id)->first();
+        $user->display = request()->input('display');
+        $user->save();
+        return redirect()->back()->with("success", "Update Successful!");
+    }
+    public function prevEdit(PreBooking $booking)
+    {
+        return view("booking.prevEdit", compact("booking"));
+    }
+
     public function destroy(PreBooking $booking)
     {
         $booking = PreBooking::where("id", $booking->id)->delete();

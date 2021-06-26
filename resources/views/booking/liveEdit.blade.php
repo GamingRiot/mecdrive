@@ -34,25 +34,30 @@
                     <div class="row push">
                         <div class="col-lg-8 col-xl-8">
                             <div class="form-group">
+                                <label for="title">Title </label>
+                                <input type="text" class="form-control" id="title" name="title"
+                                    value="{{ $booking->title }}" disabled>
+                            </div>
+                            <div class="form-group">
                                 <label for="date">Date of Pre-Booking</label>
                                 <input type="text" class="js-flatpickr form-control bg-white" id="date" name="date"
-                                    value="{{ $booking->date }}">
+                                    value="{{ $booking->date }}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="start_time">Start Time(12-hour format)</label>
                                 <input type="text" class="js-flatpickr form-control bg-white" id="start_time"
                                     name="start_time" data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
-                                    data-time_24hr="false" value="{{ $booking->start_time }}">
+                                    data-time_24hr="false" value="{{ $booking->start_time }}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="end_time">End Time(12-hour format)</label>
                                 <input type="text" class="js-flatpickr form-control bg-white" id="end_time" name="end_time"
                                     data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
-                                    data-time_24hr="false" value="{{ $booking->end_time }}">
+                                    data-time_24hr="false" value="{{ $booking->end_time }}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="slot">Select</label>
-                                <select class="selectpicker form-control" id="slot" name="slot">
+                                <select class="selectpicker form-control" id="slot" name="slot" disabled>
                                     <option value="FR" @if (strtoupper($booking->slot) === 'FR') selected @endif>FREE</option>
                                     <option value="RT" @if (strtoupper($booking->slot) === 'RT') selected @endif>RENTAL</option>
                                     <option value="SL" @if (strtoupper($booking->slot) === 'SL') selected @endif>SALE</option>
@@ -66,17 +71,17 @@
                             </div>
                             <div class="form-group">
                                 <label for="real">Number of Real Units</label>
-                                <input type="text" class="form-control" id="real" name="real"
-                                    value="{{ $booking->real }}">
+                                <input type="text" class="form-control" id="real" name="real" value="{{ $booking->real }}"
+                                    disabled>
                             </div>
                             <div class="form-group">
                                 <label for="price">Price(in Rs.)</label>
                                 <input type="text" class="form-control" id="price" name="price"
-                                    value="{{ $booking->price }}">
+                                    value="{{ $booking->price }}" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="state">Multiple Select</label>
-                                <select class="form-control sel" id="state" name="state[]" multiple>
+                                <select class="form-control sel" id="state" name="state[]" multiple disabled>
                                     <option value="Andhra Pradesh"> Andhra Pradesh</option>
                                     <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>

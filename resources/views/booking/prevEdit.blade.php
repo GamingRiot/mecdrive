@@ -1,0 +1,135 @@
+@extends('layouts.backend')
+
+@section('content')
+    <!-- Hero -->
+    <div class="bg-body-light">
+        <div class="content content-full">
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                <h1 class="flex-sm-fill h3 my-2">
+                    Create Pre-Booking
+                </h1>
+
+            </div>
+        </div>
+    </div>
+    <!-- END Hero -->
+
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Basic -->
+        <div class="block block-rounded">
+            <div class="block-header">
+                <h3 class="block-title">Fill the required details</h3>
+            </div>
+            <div class="block-content block-content-full">
+                @include('errors')
+                @if (session()->has('success'))
+                    <div class="alert alert-success mt-3">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+                <div class="row push">
+                    <div class="col-lg-8 col-xl-8">
+                        <div class="form-group">
+                            <label for="title">Title </label>
+                            <input type="text" class="form-control" id="title" name="title" value="{{ $booking->title }}"
+                                disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date of Pre-Booking</label>
+                            <input type="text" class="js-flatpickr form-control bg-white" id="date" name="date"
+                                value="{{ $booking->date }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="start_time">Start Time(12-hour format)</label>
+                            <input type="text" class="js-flatpickr form-control bg-white" id="start_time" name="start_time"
+                                data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
+                                data-time_24hr="false" value="{{ $booking->start_time }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="end_time">End Time(12-hour format)</label>
+                            <input type="text" class="js-flatpickr form-control bg-white" id="end_time" name="end_time"
+                                data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
+                                data-time_24hr="false" value="{{ $booking->end_time }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="slot">Select</label>
+                            <select class="selectpicker form-control" id="slot" name="slot" disabled>
+                                <option value="FR" @if (strtoupper($booking->slot) === 'FR') selected @endif>FREE</option>
+                                <option value="RT" @if (strtoupper($booking->slot) === 'RT') selected @endif>RENTAL</option>
+                                <option value="SL" @if (strtoupper($booking->slot) === 'SL') selected @endif>SALE</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="display">Number of Display Units</label>
+                            <input type="text" class="form-control" id="display" name="display"
+                                value="{{ $booking->display }}" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="real">Number of Real Units</label>
+                            <input type="text" class="form-control" id="real" name="real" value="{{ $booking->real }}"
+                                disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price(in Rs.)</label>
+                            <input type="text" class="form-control" id="price" name="price" value="{{ $booking->price }}"
+                                disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">Multiple Select</label>
+                            <select class="form-control sel" id="state" name="state[]" multiple disabled>
+                                <option value="Andhra Pradesh"> Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                            </select>
+                        </div>
+                        {{-- <div class="form-group">
+                                <label for="terms">Terms And Conditions</label>
+                                <textarea class="form-control" id="terms" name="terms" rows="4"
+                                    placeholder="Enter Terms and Conditions"></textarea>
+                            </div> --}}
+
+
+                    </div>
+                </div>
+
+                <!-- END Your Block -->
+            </div>
+        </div>
+    </div>
+    <!-- END Page Content -->
+@endsection

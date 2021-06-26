@@ -8,6 +8,6 @@ class PreBookingClientController extends Controller
 {
     public function index()
     {
-        return view("clientbooking.create");
+        return view("clientbooking.preBooking");
     }
 }
