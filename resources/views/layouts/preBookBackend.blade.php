@@ -285,8 +285,7 @@
                             aria-expanded="false">
                             <img class="rounded-circle" src="{{ asset('media/avatars/avatar10.jpg') }}"
                                 alt="Header Avatar" style="width: 21px;">
-                            <span class="d-none d-sm-inline-block ml-2">{{ auth()->user()->name }}</span>
-                            <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block ml-1 mt-1"></i>
+                            <span class="d-none d-sm-inline-block ml-2">Welcome back</i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0"
                             aria-labelledby="page-header-user-dropdown">

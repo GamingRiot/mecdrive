@@ -40,7 +40,8 @@ Route::match(['get', 'post'], '/dashboard', function () {
     return view('dashboard');
 });
 Route::get('/bookings/{booking}', [PreBookingController::class, 'showBooking'])->middleware("auth")->name("booking");
-Route::get('/prebooking', [PreBookingClientController::class, 'index'])->middleware("auth");
+Route::get('/prebooking', [PreBookingClientController::class, 'index'])->middleware("guest");
+Route::post('/prebooking', [PreBookingClientController::class, 'create'])->middleware("guest");
 
 Route::view('/pages/slick', 'pages.slick');
 Route::view('/pages/datatables', 'pages.datatables');

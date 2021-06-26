@@ -26,12 +26,12 @@ class PreBookingController extends Controller
             'slot' => 'required',
             'display' => 'required|integer',
             'real' => 'required|integer',
-            'state' => 'required',
+            'city' => 'required',
             'price' => 'integer',
             'title' => 'required|min:3'
         ]);
         $booking = new PreBooking($validatedRequest);
-        $booking->state = implode(",", $validatedRequest['state']);
+        $booking->city = implode(",", $validatedRequest['city']);
         $booking->save();
         return redirect()->back()->with("success", "PreBooking Created!");
     }
@@ -49,7 +49,7 @@ class PreBookingController extends Controller
         $user->display = request()->input('display');
         $user->real = request()->input('real');
         $user->price = request()->input('price');
-        $user->state = request()->input('state');
+        $user->city = request()->input('city');
         $user->save();
         return redirect()->back()->with("success", "Update Successful!");
     }

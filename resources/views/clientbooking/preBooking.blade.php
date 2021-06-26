@@ -4,7 +4,9 @@
     <!-- Hero -->
     <div class="bg-body-light">
         <div class="content content-full">
-            <form class="mb-5" action="be_forms_layouts.html" method="POST" onsubmit="return false;">
+            <form class="mb-5" method="POST">
+                @csrf
+                @include('errors')
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
@@ -63,12 +65,27 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" id="city" name="city" placeholder="Your mobile number">
+                    <label for="city">Select city</label>
+                    <br>
+                    @php
+                        $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
+                        $selected = [];
+                        echo "<select class='form-group sel' id='city' name='city' >";
+                        foreach ($cityMap as $city => $pincode) {
+                            $isSelected = '';
+                            if (in_array($pincode, $selected)) {
+                                $isSelected = 'selected';
+                            }
+                            echo "<option value='$pincode' $isSelected>";
+                            echo $city;
+                            echo '</option>';
+                        }
+                        echo '</select>';
+                    @endphp
                 </div>
                 <div class="form-group">
-                    <label for="pin">Pincode</label>
-                    <input type="text" class="form-control" id="pin" name="pin" placeholder="Your pincode">
+                    <label for="pincode">Pincode</label>
+                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Your pincode">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Login</button>
