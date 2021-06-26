@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\ClientBooking;
 use App\Models\ClientPrebooking;
+use App\Models\PreBooking;
+use Facade\FlareClient\Http\Client;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class PreBookingClientController extends Controller
 {

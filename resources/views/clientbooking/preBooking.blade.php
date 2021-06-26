@@ -70,7 +70,7 @@
                     @php
                         $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
                         $selected = [];
-                        echo "<select class='form-group sel' id='city' name='city' >";
+                        echo "<select class='form-control sel' id='city' name='city' >";
                         foreach ($cityMap as $city => $pincode) {
                             $isSelected = '';
                             if (in_array($pincode, $selected)) {
@@ -88,7 +88,7 @@
                     <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Your pincode">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
