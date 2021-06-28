@@ -2,6 +2,113 @@
 
 @section('content')
     <!-- Hero -->
+    <div class="block block-rounded">
+        <div class="block-header">
+            <h3 class="block-title">Pre-Booking Details</h3>
+            <div class="block-options">
+                <div class="block-options-item">
+                    <code></code>
+                </div>
+            </div>
+        </div>
+        <div class="block-content">
+            <table class="table table-vcenter">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="text-center" style="width: 50px;">#</th>
+                        <th>Name</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;"></th>
+                        <th class="text-center" style="width: 100px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-center" scope="row">1</th>
+                        <td class="font-w600 font-size-sm">
+                            <a href="be_pages_generic_profile.html">Prebooking Type:</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-danger">{{ $booking->slot }}</span>
+                        </td>
+                        <td class="text-center">
+                            {{-- <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
+                                    title="Edit Client">
+                                    <i class="fa fa-fw fa-pencil-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
+                                    title="Remove Client">
+                                    <i class="fa fa-fw fa-times"></i>
+                                </button>
+                            </div> --}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">2</th>
+                        <td class="font-w600 font-size-sm">
+                            <a href="be_pages_generic_profile.html">Date</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-info">{{ $booking->date->format('d-m-y') }}</span>
+                        </td>
+                        <td class="text-center">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">3</th>
+                        <td class="font-w600 font-size-sm">
+                            <a href="be_pages_generic_profile.html">Start Time</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-info">{{ date('G:i', strtotime($booking->start_time)) }}</span>
+                        </td>
+                        <td class="text-center">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">4</th>
+                        <td class="font-w600 font-size-sm">
+                            <a href="be_pages_generic_profile.html">End Time</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-danger">{{ date('G:i', strtotime($booking->end_time)) }}</span>
+                        </td>
+                        <td class="text-center">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">5</th>
+                        <td class="font-w600 font-size-sm">
+                            <a href="be_pages_generic_profile.html">Alloted Units</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-info">{{ $booking->real }}</span>
+                        </td>
+                        <td class="text-center">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="text-center" scope="row">6</th>
+                        <td class="font-w600 font-size-sm">
+                            <a href="be_pages_generic_profile.html">Units Left</a>
+                        </td>
+                        <td class="d-none d-sm-table-cell">
+                            <span class="badge badge-primary">{{ $booking->display }}</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div class="bg-body-light">
         <div class="content content-full">
             <form class="mb-5" method="POST">
