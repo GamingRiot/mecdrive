@@ -14,9 +14,14 @@ class PreBookingClientController extends Controller
 {
     public function index()
     {
-        return view("clientbooking.preBooking");
+        $bookings = PreBooking::all();
+        return view("clientbooking.showAllBooking", compact("bookings"));
     }
-    public function create()
+    public function show(PreBooking $booking)
+    {
+        return view("clientbooking.preBooking", compact("booking"));
+    }
+    public function create(PreBooking $booking)
     {
         // $verification = Nexmo::verify()->start([]);
         $validatedRequest = request()->validate([
@@ -30,13 +35,21 @@ class PreBookingClientController extends Controller
         ]);
         $user = new ClientPrebooking($validatedRequest);
         $user->save();
-        return redirect('/prebooking/verify');
+        // if (request()->input('city') != $booking->city) {
+        //     return redirect('/request');
+        // }
+        $booking = explode(',', "$booking->city");
+        if (in_array(request()->input('city'), $booking)) {
+            return redirect('/verify');
+        }
+        return redirect('/request');
+    }
+    public function request()
+    {
+        return view("clientbooking.request");
     }
     public function verify()
     {
         return view("clientbooking.verify");
-    }
-    public function verified()
-    {
     }
 }

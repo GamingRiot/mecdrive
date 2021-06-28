@@ -20,7 +20,7 @@
                         <th class="text-center" style="width: 50px;">#</th>
                         <th>Bookings</th>
                         <th class="d-none d-sm-table-cell" style="width: 15%;"></th>
-                        <th class="text-center" style="width: 100px;">Actions</th>
+                        <th class="text-center" style="width: 100px;"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,16 +35,13 @@
                                 <th class="text-center" scope="row">{{ $loop->iteration }}</th>
                                 <td class="font-w600 font-size-sm">
                                     <a
-                                        href="{{ route('booking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
+                                        href="{{ route('prebooking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell">
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('live', ['booking' => $booking->id]) }}"><button type="button"
-                                                class="btn btn-sm btn-light" data-toggle="tooltip" title="Edit Booking">
-                                                <i class="fa fa-fw fa-pencil-alt"></i>
-                                            </button></a>
+
                                         {{-- <a href="{{ route('delete', ['booking' => $booking->id]) }}"> <button
                                                 type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
                                                 title="Remove Booking">

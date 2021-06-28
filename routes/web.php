@@ -40,8 +40,13 @@ Route::match(['get', 'post'], '/dashboard', function () {
     return view('dashboard');
 });
 Route::get('/bookings/{booking}', [PreBookingController::class, 'showBooking'])->middleware("auth")->name("booking");
+
 Route::get('/prebooking', [PreBookingClientController::class, 'index'])->middleware("guest");
-Route::get('/prebooking/{booking}', [PreBookingClientController::class, 'create'])->middleware("guest");
+Route::get('/prebooking/{booking}', [PreBookingClientController::class, 'show'])->middleware("guest")->name("prebooking");
+Route::post('/prebooking/{booking}', [PreBookingClientController::class, 'create'])->middleware("guest");
+Route::get('/request', [PreBookingClientController::class, 'request'])->middleware("guest");
+Route::get('/verify', [PreBookingClientController::class, 'verify'])->middleware("guest");
+
 // Route::get('/prebooking/verify', [PreBookingClientController::class, 'verify'])->name("nexmo")->middleware("guest");
 // Route::post('/prebooking/verify', [PreBookingClientController::class, 'verified'])->middleware("guest");
 
