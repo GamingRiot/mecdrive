@@ -18,11 +18,11 @@ class CreateClientPrebookingsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('address');
-            $table->text('mobile');
+            $table->text('mobile')->unique();
             $table->text('state');
             $table->text('city');
             $table->integer('pincode');
-            $table->timestamps();
+            $table->timestamp('mobile_verified_at')->nullable();
         });
     }
 
