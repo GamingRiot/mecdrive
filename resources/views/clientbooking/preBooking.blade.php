@@ -25,7 +25,7 @@
                     <tr>
                         <th class="text-center" scope="row">1</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Prebooking Type:</a>
+                            <a href="#">Prebooking Type:</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-danger">{{ $booking->slot }}</span>
@@ -46,7 +46,7 @@
                     <tr>
                         <th class="text-center" scope="row">2</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Date</a>
+                            <a href="#">Date</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-info">{{ $booking->date->format('d-m-y') }}</span>
@@ -58,7 +58,7 @@
                     <tr>
                         <th class="text-center" scope="row">3</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Start Time</a>
+                            <a href="#">Start Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-info">{{ date('G:i', strtotime($booking->start_time)) }}</span>
@@ -70,7 +70,7 @@
                     <tr>
                         <th class="text-center" scope="row">4</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">End Time</a>
+                            <a href="#">End Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-danger">{{ date('G:i', strtotime($booking->end_time)) }}</span>
@@ -82,7 +82,7 @@
                     <tr>
                         <th class="text-center" scope="row">5</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Alloted Units</a>
+                            <a href="#">Alloted Units</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-info">{{ $booking->real }}</span>
@@ -94,7 +94,7 @@
                     <tr>
                         <th class="text-center" scope="row">6</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Units Left</a>
+                            <a href="#">Units Left</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-primary">{{ $booking->display }}</span>
