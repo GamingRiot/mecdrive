@@ -31,7 +31,8 @@
                             </td>
                             <td class="d-none d-sm-table-cell">
 
-                                <select name="tot_pin_requested" onchange="calculateAmount(this.value)" required>
+                                <select name="tot_pin_requested" onchange="myFunction();calculateAmount(this.value)"
+                                    id="mySelect" required>
                                     <option value="" disabled selected>Choose your option</option>
                                     <option value="{{ $booking->price }}">1 Month</option>
                                     <option value="{{ $booking->price_2month }}">2 Months</option>
@@ -57,7 +58,7 @@
                             @if ($booking->slot === 'FREE')
                                 Rs. 0
                             @elseif($booking->slot==='RENT')
-                                Rs.{{ $booking->price }}
+                                Rs.<div id="demo"></div>
                             @elseif($booking->slot==='SALE')
                                 Rs.{{ $booking->price }}
                             @endif
@@ -75,14 +76,19 @@
 
                             @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
                                 <a href="#">Pre-Book Rental Fee after break-up</a>
+                            @else
+                                <a href="#">Pre-Book Sale Fee after break-up</a>
                             @endif
-                            <a href="#">Pre-Book Sale Fee after break-up</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
+                            @if ($booking->slot === 'FREE')
+                                <input class="" name="tot_amount" id="tot_amount" type="text" VALUE="Rs.0"
+                                    readonly>(including GST)
+                            @elseif($booking->slot === 'RENT')
                                 <input class="" name="tot_amount" id="tot_amount" type="text" readonly>(including GST)
+                            @else
+                                Rs.{{ $booking->price + $booking->price * 0.18 }} (including GST)
                             @endif
-                            Rs.{{ $booking->price + $booking->price * 0.18 }} (including GST)
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
@@ -175,6 +181,12 @@
 
             var divobj = document.getElementById('tot_amount');
             divobj.value = tot_price;
+        }
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = x;
         }
     </script>
 @endsection
