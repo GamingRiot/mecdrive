@@ -26275,6 +26275,7 @@ padding:10px;
 }
 .badge-prebooking{
   background-color:#0099ff;
-  font-size:15px;
+  font-size:13px;
   color:white;
+  padding:0 2px 0 2px;
 }
