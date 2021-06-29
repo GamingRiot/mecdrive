@@ -12855,7 +12855,7 @@ a.badge-secondary:focus, a.badge-secondary.focus {
 .block {
   margin-bottom: 1.875rem;
   background-color: #fff;
-  box-shadow: 0 1px 2px rgba(216, 223, 227, 0.5), 0 1px 2px rgba(216, 223, 227, 0.5);
+
 }
 .block .block, .content-side .block {
   box-shadow: none;
@@ -26205,4 +26205,76 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   #page-container.rtl-support .nav-main-horizontal.nav-main-hover .nav-main-submenu .nav-main-item:hover > .nav-main-link-submenu::before {
     transform: scaleX(-1);
   }
+}
+.body-prebookbackend{
+  background-color:black;
+}
+.block-rounded{
+background-color:#1A1A1A;
+margin:0 30px 0 30px;
+border-radius:20px !important;
+border:0;
+padding:10px;
+
+}
+.block-title{
+  color:red;
+}
+.content-header{
+  background-color:black;
+
+}
+#page-header{
+ background-color:black;
+ position:relative;
+ bottom:100px;
+}
+.d-none{
+ 
+  font-size:16px;
+  width:150px;
+  height:50;
+}
+.btn-dual{
+ background-color:#0099ff;
+  font-size:20px;
+  width:200px;
+  height:60px;
+  border:0;
+  border-radius:20px;
+
+}
+.block-title{
+  font-size:18px;
+  color:#0099ff;
+}
+.table-vcenter{
+  color:white;
+  padding:20px;
+  font-size:16px;
+  margin-bottom:30px;
+}
+.table-link{
+  color:white;!important
+}
+.form-prebooking{
+  background-color:#1A1A1A;
+  margin:60px 30px 0 30px;
+  border-radius:20px !important;
+
+}
+.label-prebooking{
+  color:#0099ff;
+}
+.input-prebooking{
+  background-color:#343a40;
+  border:0;
+}
+.btn-prebooking{
+   background-color:#0099ff;
+}
+.badge-prebooking{
+  background-color:#0099ff;
+  font-size:15px;
+  color:white;
 }

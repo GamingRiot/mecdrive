@@ -42,7 +42,10 @@
     </script>
 </head>
 
-<body>
+<body class="body-prebookbackend">
+<nav class="navbar">
+<img src="{{asset('images/wave-top.svg')}}" class="image-nav">
+</nav>
     <!-- Page Container -->
     <!--
             Available classes for #page-container:
@@ -82,7 +85,7 @@
             'main-content-boxed'                        Full width Main Content with a specific maximum width (screen width > 1200px)
             'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
         -->
-    <div id="page-container" class="enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
+    <div id="page-container" class="top-bar sidebar-dark main-content-narrow">
         <!-- Side Overlay-->
         <aside id="side-overlay" class="font-size-sm">
             <!-- Side Header -->
@@ -271,19 +274,8 @@
         <!-- END Main Container -->
 
         <!-- Footer -->
-        <footer id="page-footer" class="bg-body-light">
-            <div class="content py-3">
-                <div class="row font-size-sm">
-                    <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-right">
-                        Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600"
-                            href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
-                    </div>
-                    <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-                        <a class="font-w600" href="https://1.envato.market/AVD6j" target="_blank">OneUI</a> &copy; <span
-                            data-toggle="year-copy"></span>
-                    </div>
-                </div>
-            </div>
+        <footer id="page-footer" class="">
+           <img src="{{asset('/images/wave-bottom.svg')}}" class="img-footer">
         </footer>
         <!-- END Footer -->
 
