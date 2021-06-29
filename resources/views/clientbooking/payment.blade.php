@@ -157,6 +157,11 @@
             </table>
         </div>
     </div>
+
+    <div class="form-group" style="margin-left:20px;">
+        <a href="{{ route('payment', ['booking' => $booking->id, 'user' => $user->id]) }}"><button type="button"
+                class="btn btn-primary">Proceed To Checkout</button></a>
+    </div>
     <!-- END Hero -->
 
     <!-- Page Content -->
