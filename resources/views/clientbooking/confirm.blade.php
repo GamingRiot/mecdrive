@@ -135,7 +135,8 @@
                 <div class="form-group">
                     <label for="state">Select State</label>
                     <select class="form-control sel" id="state" name="state" value="{{ $user->state }}" disabled>
-                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="{{ $user->state }}">{{ $user->state }}</option>
+                        {{-- <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                         <option value="Assam">Assam</option>
@@ -170,7 +171,7 @@
                         <option value="Tripura">Tripura</option>
                         <option value="Uttar Pradesh">Uttar Pradesh</option>
                         <option value="Uttarakhand">Uttarakhand</option>
-                        <option value="West Bengal">West Bengal</option>
+                        <option value="West Bengal">West Bengal</option> --}}
                     </select>
                 </div>
                 <div class="form-group">
@@ -179,8 +180,7 @@
                     @php
                         $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
                         $selected = explode(',', "$user->city");
-                        
-                        echo "<select class='form-control sel' id='city' name='city' disabled>";
+                        echo "<select multiple class='form-group sel' id='city' name='city[]' disabled>";
                         foreach ($cityMap as $city => $pincode) {
                             $isSelected = '';
                             if (in_array($pincode, $selected)) {
