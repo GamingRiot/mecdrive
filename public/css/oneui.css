@@ -26209,7 +26209,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .body-prebookbackend{
   background-color:black;
 }
-.block-rounded{
+
+.block-showall{
 background-color:#1A1A1A;
 margin:0 30px 0 30px;
 border-radius:20px !important;
@@ -26217,19 +26218,20 @@ border:0;
 padding:10px;
 
 }
-.block-title{
-  color:red;
+.block-prebooking{
+background-color:#1A1A1A;
+margin:0 30px 0 30px;
+border-radius:20px !important;
+border:0;
+padding:10px;
+
 }
-.content-header{
+.content-header-prebooking{
   background-color:black;
 
 }
-#page-header{
- background-color:black;
- position:relative;
- bottom:100px;
-}
-.d-none{
+
+/* .d-none{
  
   font-size:16px;
   width:150px;
@@ -26243,19 +26245,24 @@ padding:10px;
   border:0;
   border-radius:20px;
 
-}
-.block-title{
+} */
+.title-prebooking{
   font-size:18px;
   color:#0099ff;
 }
-.table-vcenter{
+.title-showall{
+  font-size:18px;
+  color:#0099ff;
+}
+
+.table-showallbooking{
   color:white;
   padding:20px;
   font-size:16px;
   margin-bottom:30px;
 }
 .table-link{
-  color:white;!important
+  color:white !important;
 }
 .form-prebooking{
   background-color:#1A1A1A;
@@ -26264,18 +26271,31 @@ padding:10px;
 
 }
 .label-prebooking{
-  color:#0099ff;
+  color:white;
 }
 .input-prebooking{
   background-color:#343a40;
   border:0;
+  border-radius:100px;
 }
 .btn-prebooking{
    background-color:#0099ff;
 }
 .badge-prebooking{
-  background-color:#0099ff;
+  
   font-size:13px;
-  color:white;
+  color:#0099ff;
   padding:0 2px 0 2px;
+}
+.request-text{
+  color:#0099ff;
+  font-size:30px;
+}
+.request-body{
+  text-align:center;
+}
+.request-img{
+  
+  width:500px;
+  height:auto;
 }

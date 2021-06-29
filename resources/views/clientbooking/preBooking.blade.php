@@ -2,9 +2,9 @@
 
 @section('content')
     <!-- Hero -->
-    <div class="block block-rounded">
+    <div class="block-prebooking block block-rounded">
         <div class="block-header">
-            <h3 class="block-title">Pre-Booking Details</h3>
+            <h3 class="title-prebooking block-title">Pre-Booking Details</h3>
             <div class="block-options">
                 <div class="block-options-item">
                     <code></code>
@@ -25,10 +25,10 @@
                     <tr>
                         <th class="text-center" scope="row">1</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Prebooking Type:</a>
+                            <a href="#" class="table-link">Prebooking Type:</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-prebooking">{{ $booking->slot }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->slot }}</div>
                         </td>
                         <td class="text-center">
                             {{-- <div class="btn-group">
@@ -46,10 +46,10 @@
                     <tr>
                         <th class="text-center" scope="row">2</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Date</a>
+                            <a href="#" class="table-link">Date</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-prebooking">{{ $booking->date->format('d-m-y') }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->date->format('d-m-y') }}</div>
                         </td>
                         <td class="text-center">
 
@@ -58,10 +58,10 @@
                     <tr>
                         <th class="text-center" scope="row">3</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Start Time</a>
+                            <a href="#" class="table-link">Start Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-prebooking">{{ date('G:i', strtotime($booking->start_time)) }}</span>
+                            <div class="badge badge-prebooking">{{ date('G:i', strtotime($booking->start_time)) }}</div>
                         </td>
                         <td class="text-center">
 
@@ -70,10 +70,10 @@
                     <tr>
                         <th class="text-center" scope="row">4</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">End Time</a>
+                            <a href="#" class="table-link">End Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-prebooking">{{ date('G:i', strtotime($booking->end_time)) }}</span>
+                            <div class="badge badge-prebooking">{{ date('G:i', strtotime($booking->end_time)) }}</div>
                         </td>
                         <td class="text-center">
 
@@ -82,10 +82,10 @@
                     <tr>
                         <th class="text-center" scope="row">5</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Alloted Units</a>
+                            <a href="#" class="table-link">Alloted Units</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-prebooking">{{ $booking->real }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->real }}</div>
                         </td>
                         <td class="text-center">
 
@@ -94,10 +94,10 @@
                     <tr>
                         <th class="text-center" scope="row">6</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Units Left</a>
+                            <a href="#" class="table-link">Units Left</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-prebooking">{{ $booking->display }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->display }}</div>
                         </td>
                         <td class="text-center">
                             <div class="btn-group">

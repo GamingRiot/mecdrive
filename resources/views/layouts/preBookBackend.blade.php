@@ -85,41 +85,9 @@
             'main-content-boxed'                        Full width Main Content with a specific maximum width (screen width > 1200px)
             'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
         -->
-    <div id="page-container" class="top-bar sidebar-dark main-content-narrow">
+    <div id="page-container" class="enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
         <!-- Side Overlay-->
-        <aside id="side-overlay" class="font-size-sm">
-            <!-- Side Header -->
-            <div class="content-header border-bottom">
-                <!-- User Avatar -->
-                <a class="img-link mr-1" href="javascript:void(0)">
-                    <img class="img-avatar img-avatar32" src="{{ asset('media/avatars/avatar10.jpg') }}" alt="">
-                </a>
-                <!-- END User Avatar -->
-
-                <!-- User Info -->
-                <div class="ml-2">
-                    <a class="text-dark font-w600 font-size-sm" href="javascript:void(0)">Adam McCoy</a>
-                </div>
-                <!-- END User Info -->
-
-                <!-- Close Side Overlay -->
-                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                <a class="ml-auto btn btn-sm btn-alt-danger" href="javascript:void(0)" data-toggle="layout"
-                    data-action="side_overlay_close">
-                    <i class="fa fa-fw fa-times"></i>
-                </a>
-                <!-- END Close Side Overlay -->
-            </div>
-            <!-- END Side Header -->
-
-            <!-- Side Content -->
-            <div class="content-side">
-                <p>
-                    Content..
-                </p>
-            </div>
-            <!-- END Side Content -->
-        </aside>
+        /
         <!-- END Side Overlay -->
 
         <!-- Sidebar -->
@@ -137,7 +105,7 @@
 
         <!-- END Sidebar -->
 
-        <!-- Header -->
+        
         <header id="page-header">
             <!-- Header Content -->
             <div class="content-header">
