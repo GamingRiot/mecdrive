@@ -58,9 +58,9 @@
                             <div class="form-group">
                                 <label for="slot">Select</label>
                                 <select class="selectpicker form-control" id="slot" name="slot">
-                                    <option value="FR" selected>FREE</option>
-                                    <option value="RT">RENTAL</option>
-                                    <option value="SL">SALE</option>
+                                    <option value="FREE" selected>FREE</option>
+                                    <option value="RENT">RENTAL</option>
+                                    <option value="SALE">SALE</option>
                                 </select>
 
                             </div>

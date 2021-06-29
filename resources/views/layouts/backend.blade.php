@@ -577,7 +577,7 @@
     </script> --}}
     <script>
         document.getElementById('slot').onchange = function() {
-            document.getElementById("price").disabled = (this.value === 'FR');
+            document.getElementById("price").disabled = (this.value === 'FREE');
         }
     </script>
     <!-- Laravel Scaffolding JS -->

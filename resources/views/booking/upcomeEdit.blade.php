@@ -58,9 +58,9 @@
                             <div class="form-group">
                                 <label for="slot">Select</label>
                                 <select class="selectpicker form-control" id="slot" name="slot">
-                                    <option value="FR" @if (strtoupper($booking->slot) === 'FR') selected @endif>FREE</option>
-                                    <option value="RT" @if (strtoupper($booking->slot) === 'RT') selected @endif>RENTAL</option>
-                                    <option value="SL" @if (strtoupper($booking->slot) === 'SL') selected @endif>SALE</option>
+                                    <option value="FREE" @if (strtoupper($booking->slot) === 'FREE') selected @endif>FREE</option>
+                                    <option value="RENT" @if (strtoupper($booking->slot) === 'RENT') selected @endif>RENTAL</option>
+                                    <option value="SALE" @if (strtoupper($booking->slot) === 'SALE') selected @endif>SALE</option>
                                 </select>
 
                             </div>
@@ -86,7 +86,7 @@
                                 @php
                                     $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
                                     $selected = explode(',', "$booking->city");
-                                    echo "<select multiple class='form-group sel' id='city' name='city[]' disabled>";
+                                    echo "<select multiple class='form-group sel' id='city' name='city[]' >";
                                     foreach ($cityMap as $city => $pincode) {
                                         $isSelected = '';
                                         if (in_array($pincode, $selected)) {

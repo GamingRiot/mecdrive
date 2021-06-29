@@ -45,7 +45,9 @@ Route::get('/prebooking', [PreBookingClientController::class, 'index'])->middlew
 Route::get('/prebooking/{booking}', [PreBookingClientController::class, 'show'])->middleware("guest")->name("prebooking");
 Route::post('/prebooking/{booking}', [PreBookingClientController::class, 'create'])->middleware("guest");
 Route::get('/request', [PreBookingClientController::class, 'request'])->middleware("guest");
-Route::get('/verify', [PreBookingClientController::class, 'verify'])->middleware("guest");
+Route::get('/prebooking/{booking}/verify', [PreBookingClientController::class, 'verify'])->middleware("guest")->name("verify");
+Route::post('/prebooking/{booking}/verify', [PreBookingClientController::class, 'verified'])->middleware("guest");
+Route::get('/prebooking/{booking}/confirm', [PreBookingClientController::class, 'confirm'])->middleware("guest")->name("confirm");
 
 // Route::get('/prebooking/verify', [PreBookingClientController::class, 'verify'])->name("nexmo")->middleware("guest");
 // Route::post('/prebooking/verify', [PreBookingClientController::class, 'verified'])->middleware("guest");
