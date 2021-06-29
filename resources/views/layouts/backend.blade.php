@@ -578,8 +578,11 @@
     <script>
         document.getElementById('slot').onchange = function() {
             document.getElementById("price").disabled = (this.value === 'FREE');
+            document.getElementById("price_2month").disabled = (this.value === 'FREE');
+            document.getElementById("price_2month").disabled = (this.value === 'SALE');
         }
     </script>
+
     <!-- Laravel Scaffolding JS -->
     <!-- <script src="{{ mix('/js/laravel.app.js') }}"></script> -->
 

@@ -62,6 +62,6 @@ class PreBookingClientController extends Controller
     }
     public function payment(PreBooking $booking, ClientPrebooking $user)
     {
-        return view("clientbooking.payment");
+        return view("clientbooking.payment", compact("booking", "user"));
     }
 }

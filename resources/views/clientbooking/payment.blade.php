@@ -16,118 +16,123 @@
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 50px;"></th>
-                        <th>Name</th>
-                        <th class="d-none d-sm-table-cell" style="width: 15%;">Access</th>
-                        <th class="text-center" style="width: 100px;">Actions</th>
+                        <th>Details</th>
+                        <th class="d-none d-sm-table-cell" style="width: 15%;">Fee</th>
+                        <th class="text-center" style="width: 100px;"></th>
                     </tr>
                 </thead>
                 <tbody>
+                    @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
+                        <tr>
+
+                            <th class="text-center" scope="row"></th>
+                            <td class="font-w600 font-size-sm">
+                                <a href="#">Rental Duration</a>
+                            </td>
+                            <td class="d-none d-sm-table-cell">
+
+                                <select name="tot_pin_requested" onchange="calculateAmount(this.value)" required>
+                                    <option value="" disabled selected>Choose your option</option>
+                                    <option value="{{ $booking->price }}">1 Month</option>
+                                    <option value="{{ $booking->price_2month }}">2 Months</option>
+                                </select>
+
+                            </td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                </div>
+                            </td>
+                        </tr>
+                    @endif
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Brian Cruz</a>
+                            @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
+                                <a href="#">Pre-Book Rental Fee</a>
+                            @endif
+                            <a href="#">Pre-Book Sale Fee</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-success">VIP</span>
+
+                            @if ($booking->slot === 'FREE')
+                                Rs. 0
+                            @elseif($booking->slot==='RENT')
+                                Rs.{{ $booking->price }}
+                            @elseif($booking->slot==='SALE')
+                                Rs.{{ $booking->price }}
+                            @endif
+
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Edit Client">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Remove Client">
-                                    <i class="fa fa-fw fa-times"></i>
-                                </button>
+
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Jose Parker</a>
+
+                            @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
+                                <a href="#">Pre-Book Rental Fee after break-up</a>
+                            @endif
+                            <a href="#">Pre-Book Sale Fee after break-up</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-success">VIP</span>
+                            @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
+                                <input class="" name="tot_amount" id="tot_amount" type="text" readonly>(including GST)
+                            @endif
+                            Rs.{{ $booking->price + $booking->price * 0.18 }} (including GST)
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Edit Client">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Remove Client">
-                                    <i class="fa fa-fw fa-times"></i>
-                                </button>
+
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Carol Ray</a>
+                            <a href="#">Delivery Charges</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-danger">Disabled</span>
+                            Rs. XYZ
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Edit Client">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Remove Client">
-                                    <i class="fa fa-fw fa-times"></i>
-                                </button>
+
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Wayne Garcia</a>
+                            <a href="#">Total Amount</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-info">Business</span>
+                            Rs. XYZ
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Edit Client">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Remove Client">
-                                    <i class="fa fa-fw fa-times"></i>
-                                </button>
+
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Lisa Jenkins</a>
+                            <a href="#">Expected Delivery Date</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-primary">Personal</span>
+                            7-8 Business Days
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Edit Client">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip"
-                                    title="Remove Client">
-                                    <i class="fa fa-fw fa-times"></i>
-                                </button>
+
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
                             <a href="be_pages_generic_profile.html">Susan Day</a>
@@ -147,7 +152,7 @@
                                 </button>
                             </div>
                         </td>
-                    </tr>
+                    </tr> --}}
                 </tbody>
             </table>
         </div>
@@ -157,4 +162,14 @@
     <!-- Page Content -->
 
     <!-- END Page Content -->
+    <script>
+        function calculateAmount(val) {
+            var price = val * 1;
+            //display the result
+            var tot_price = price + (price * 0.18);
+
+            var divobj = document.getElementById('tot_amount');
+            divobj.value = tot_price;
+        }
+    </script>
 @endsection
