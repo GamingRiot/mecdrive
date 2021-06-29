@@ -40,7 +40,7 @@ class PreBookingClientController extends Controller
         // }
         $bookingCities = explode(',', "$booking->city");
         if (in_array(request()->input('city'), $bookingCities)) {
-            return redirect('/prebooking/' . $booking->id . '/verify');
+            return redirect('/prebooking/' . $booking->id . '/verify/' . $user->id);
         }
         return redirect('/request');
     }
@@ -48,16 +48,16 @@ class PreBookingClientController extends Controller
     {
         return view("clientbooking.request");
     }
-    public function verify(PreBooking $booking)
+    public function verify(PreBooking $booking, ClientPrebooking $user)
     {
         return view("clientbooking.verify");
     }
-    public function verified(PreBooking $booking)
+    public function verified(PreBooking $booking, ClientPrebooking $user)
     {
-        return redirect('/prebooking/$booking->id/confirm');
+        return redirect('/prebooking/' . $booking->id . '/confirm/' . $user->id);
     }
-    public function confirm()
+    public function confirm(PreBooking $booking, ClientPrebooking $user)
     {
-        return view("clientbooking.confirm");
+        return view("clientbooking.confirm", compact("booking", "user"));
     }
 }

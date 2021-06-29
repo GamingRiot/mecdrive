@@ -116,25 +116,25 @@
                 @include('errors')
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your name" disabled>
+                    <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" disabled>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email.." disabled>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" disabled>
                 </div>
                 <div class="form-group">
                     <label for="mobile">Mobile Number</label>
-                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your mobile number"
+                    <input type="text" class="form-control" id="mobile" name="mobile" value="{{ $user->mobile }}"
                         disabled>
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Your address "
+                    <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}"
                         disabled>
                 </div>
                 <div class="form-group">
                     <label for="state">Select State</label>
-                    <select class="form-control sel" id="state" name="state" disabled>
+                    <select class="form-control sel" id="state" name="state" value="{{ $user->state }}" disabled>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -178,7 +178,8 @@
                     <br>
                     @php
                         $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
-                        $selected = [];
+                        $selected = explode(',', "$user->city");
+                        
                         echo "<select class='form-control sel' id='city' name='city' disabled>";
                         foreach ($cityMap as $city => $pincode) {
                             $isSelected = '';
@@ -194,7 +195,8 @@
                 </div>
                 <div class="form-group">
                     <label for="pincode">Pincode</label>
-                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Your pincode" disabled>
+                    <input type="text" class="form-control" id="pincode" name="pincode" value="{{ $user->pincode }}"
+                        disabled>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Proceed To Checkout</button>
