@@ -173,13 +173,7 @@
                 <div class="d-flex align-items-center">
                     <!-- User Dropdown -->
                     <div class="dropdown d-inline-block ml-2">
-                        <button type="button" class="btn btn-sm btn-dual d-flex align-items-center"
-                            id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            <img class="rounded-circle" src="{{ asset('media/avatars/avatar10.jpg') }}"
-                                alt="Header Avatar" style="width: 21px;">
-                            <span class="d-none d-sm-inline-block ml-2">Welcome back</i>
-                        </button>
+
                         <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0"
                             aria-labelledby="page-header-user-dropdown">
                             <div class="p-3 text-center bg-primary-dark rounded-top">

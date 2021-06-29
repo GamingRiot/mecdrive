@@ -111,7 +111,7 @@
     </div>
     <div class="bg-body-light">
         <div class="content content-full">
-            <form class="mb-5" method="POST">
+            <form class="mb-5" method="GET">
                 @csrf
                 @include('errors')
                 <div class="form-group">
@@ -199,7 +199,8 @@
                         disabled>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Proceed To Checkout</button>
+                    <a href="{{ route('payment', ['booking' => $booking->id, 'user' => $user->id]) }}"><button
+                            type="button" class="btn btn-primary">Proceed To Checkout</button></a>
                 </div>
             </form>
         </div>
