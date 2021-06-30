@@ -80,6 +80,11 @@
                                     value="{{ $booking->price }}" disabled>
                             </div>
                             <div class="form-group">
+                                <label for="price_2month">Price for 2 month(in Rs.)</label>
+                                <input type="text" class="form-control" id="price_2month" name="price_2month"
+                                    value="{{ $booking->price_2month }}" disabled>
+                            </div>
+                            <div class="form-group">
                                 <label for="city">Select City</label>
                                 @php
                                     $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);

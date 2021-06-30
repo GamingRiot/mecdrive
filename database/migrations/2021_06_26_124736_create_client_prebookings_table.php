@@ -22,7 +22,8 @@ class CreateClientPrebookingsTable extends Migration
             $table->text('state');
             $table->text('city');
             $table->integer('pincode');
-            $table->timestamp('mobile_verified_at')->nullable();
+            $table->timestamps();
+            // $table->timestamp('mobile_verified_at')->nullable();
         });
     }
 
