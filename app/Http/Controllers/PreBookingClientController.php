@@ -60,8 +60,51 @@ class PreBookingClientController extends Controller
     {
         return view("clientbooking.confirm", compact("booking", "user"));
     }
+
     public function success()
     {
         return view("clientbooking.success");
+
+    public function payment(PreBooking $booking, ClientPrebooking $user)
+    {
+        return view("clientbooking.payment", compact("booking", "user"));
+    }
+    public function checkout()
+    {
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://test.instamojo.com/api/1.1/payment-requests/');
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+        curl_setopt(
+            $ch,
+            CURLOPT_HTTPHEADER,
+            array(
+                "X-Api-Key:test_e0d200504339b64f1dd4de5d4ad",
+                "X-Auth-Token:test_1d1759dab919724e937ab434598"
+            )
+        );
+        $payload = array(
+            'purpose' => 'Pre-Book',
+            'amount' => '2500',
+            'phone' => '9999999999',
+            'buyer_name' => 'John Doe',
+            'redirect_url' => 'http://www.example.com/redirect/',
+            'send_email' => true,
+            'send_sms' => true,
+            'email' => 'foo@example.com',
+            'allow_repeated_payments' => false
+        );
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($payload));
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $response = json_decode($response);
+        // echo '<pre>';
+        // print_r($response);
+        return redirect($response->payment_request->longurl);
+
     }
 }
