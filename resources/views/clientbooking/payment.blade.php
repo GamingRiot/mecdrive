@@ -27,7 +27,7 @@
 
                             <th class="text-center" scope="row"></th>
                             <td class="font-w600 font-size-sm">
-                                <a href="#">Rental Duration</a>
+                                <a href="#" class="table-link">Rental Duration</a>
                             </td>
                             <td class="d-none d-sm-table-cell">
 
@@ -51,7 +51,7 @@
                             @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
                                 <a class="table-link" href="#">Pre-Book Rental Fee</a>
                             @endif
-                            <a  class="table-link" href="#">Pre-Book Sale Fee</a>
+                            <a class="table-link" href="#">Pre-Book Sale Fee</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
 
@@ -164,7 +164,7 @@
         </div>
     </div>
 
-    <div class="form-group" style="margin-left:20px;">
+    <div class="form-group" style="margin-left:20px;margin-top:20px;">
         <a href="{{ route('checkout', ['booking' => $booking->id, 'user' => $user->id]) }}"><button type="button"
                 class="btn btn-prebooking">Proceed To Checkout</button></a>
     </div>
