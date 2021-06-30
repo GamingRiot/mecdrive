@@ -106,6 +106,86 @@
         <!-- END Sidebar -->
 
 
+        
+        <header id="page-header">
+            <!-- Header Content -->
+            <div class="content-header">
+                <!-- Left Section -->
+                <div class="d-flex align-items-center">
+                    <!-- Toggle Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+                    <button type="button" class="btn btn-sm btn-dual mr-2 d-lg-none" data-toggle="layout"
+                        data-action="sidebar_toggle">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <!-- END Toggle Sidebar -->
+
+                    <!-- Toggle Mini Sidebar -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
+
+                    <!-- END Toggle Mini Sidebar -->
+
+                    <!-- Apps Modal -->
+                    <!-- Opens the Apps modal found at the bottom of the page, after footer’s markup -->
+
+                    <!-- END Apps Modal -->
+
+                    <!-- Open Search Section (visible on smaller screens) -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+
+                    <!-- END Open Search Section -->
+
+                    <!-- Search Form (visible on larger screens) -->
+
+                    <!-- END Search Form -->
+                </div>
+                <!-- END Left Section -->
+
+                <!-- Right Section -->
+                <div class="d-flex align-items-center">
+                    <!-- User Dropdown -->
+                    <div class="dropdown d-inline-block ml-2">
+                     
+                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0"
+                            aria-labelledby="page-header-user-dropdown">
+                            <div class="p-3 text-center bg-primary-dark rounded-top">
+                                <img class="img-avatar img-avatar48 img-avatar-thumb"
+                                    src="{{ asset('media/avatars/avatar10.jpg') }}" alt="">
+                                <p class="mt-2 mb-0 text-white font-w500">Adam Smith</p>
+                                <p class="mb-0 text-white-50 font-size-sm">Web Developer</p>
+                            </div>
+                            <div class="p-2">
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Inbox</span>
+                                    <span class="badge badge-pill badge-primary ml-2">3</span>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Profile</span>
+                                    <span class="badge badge-pill badge-primary ml-2">1</span>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Settings</span>
+                                </a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="javascript:void(0)">
+                                    <span class="font-size-sm font-w500">Lock Account</span>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                    href="/signout">
+                                    <span class="font-size-sm font-w500">Log Out</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END User Dropdown -->
+
+                    <!-- Notifications Dropdown -->
+
+
 
         <!-- END Header -->
 
