@@ -43,9 +43,9 @@
 </head>
 
 <body class="body-prebookbackend">
-<nav class="navbar">
-<img src="{{asset('images/wave-top.svg')}}" class="image-nav">
-</nav>
+    <nav class="navbar">
+        <img src="{{ asset('images/wave-top.svg') }}" class="image-nav">
+    </nav>
     <!-- Page Container -->
     <!--
             Available classes for #page-container:
@@ -87,7 +87,7 @@
         -->
     <div id="page-container" class="enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
         <!-- Side Overlay-->
-        /
+
         <!-- END Side Overlay -->
 
         <!-- Sidebar -->
@@ -105,128 +105,8 @@
 
         <!-- END Sidebar -->
 
-        
-        <header id="page-header">
-            <!-- Header Content -->
-            <div class="content-header">
-                <!-- Left Section -->
-                <div class="d-flex align-items-center">
-                    <!-- Toggle Sidebar -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
-                    <button type="button" class="btn btn-sm btn-dual mr-2 d-lg-none" data-toggle="layout"
-                        data-action="sidebar_toggle">
-                        <i class="fa fa-fw fa-bars"></i>
-                    </button>
-                    <!-- END Toggle Sidebar -->
 
-                    <!-- Toggle Mini Sidebar -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout()-->
 
-                    <!-- END Toggle Mini Sidebar -->
-
-                    <!-- Apps Modal -->
-                    <!-- Opens the Apps modal found at the bottom of the page, after footer’s markup -->
-
-                    <!-- END Apps Modal -->
-
-                    <!-- Open Search Section (visible on smaller screens) -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-
-                    <!-- END Open Search Section -->
-
-                    <!-- Search Form (visible on larger screens) -->
-
-                    <!-- END Search Form -->
-                </div>
-                <!-- END Left Section -->
-
-                <!-- Right Section -->
-                <div class="d-flex align-items-center">
-                    <!-- User Dropdown -->
-                    <div class="dropdown d-inline-block ml-2">
-
-                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right p-0 border-0"
-                            aria-labelledby="page-header-user-dropdown">
-                            <div class="p-3 text-center bg-primary-dark rounded-top">
-                                <img class="img-avatar img-avatar48 img-avatar-thumb"
-                                    src="{{ asset('media/avatars/avatar10.jpg') }}" alt="">
-                                <p class="mt-2 mb-0 text-white font-w500">Adam Smith</p>
-                                <p class="mb-0 text-white-50 font-size-sm">Web Developer</p>
-                            </div>
-                            <div class="p-2">
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span class="font-size-sm font-w500">Inbox</span>
-                                    <span class="badge badge-pill badge-primary ml-2">3</span>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span class="font-size-sm font-w500">Profile</span>
-                                    <span class="badge badge-pill badge-primary ml-2">1</span>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span class="font-size-sm font-w500">Settings</span>
-                                </a>
-                                <div role="separator" class="dropdown-divider"></div>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="javascript:void(0)">
-                                    <span class="font-size-sm font-w500">Lock Account</span>
-                                </a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between"
-                                    href="/signout">
-                                    <span class="font-size-sm font-w500">Log Out</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END User Dropdown -->
-
-                    <!-- Notifications Dropdown -->
-
-                    <!-- END Notifications Dropdown -->
-
-                    <!-- Toggle Side Overlay -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-
-                    <!-- END Toggle Side Overlay -->
-                </div>
-                <!-- END Right Section -->
-            </div>
-            <!-- END Header Content -->
-
-            <!-- Header Search -->
-            <div id="page-header-search" class="overlay-header bg-white">
-                <div class="content-header">
-                    <form class="w-100" action="/dashboard" method="POST">
-                        @csrf
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                <button type="button" class="btn btn-alt-danger" data-toggle="layout"
-                                    data-action="header_search_off">
-                                    <i class="fa fa-fw fa-times-circle"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search or hit ESC.."
-                                id="page-header-search-input" name="page-header-search-input">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- END Header Search -->
-
-            <!-- Header Loader -->
-            <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
-            <div id="page-header-loader" class="overlay-header bg-white">
-                <div class="content-header">
-                    <div class="w-100 text-center">
-                        <i class="fa fa-fw fa-circle-notch fa-spin"></i>
-                    </div>
-                </div>
-            </div>
-            <!-- END Header Loader -->
-        </header>
         <!-- END Header -->
 
         <!-- Main Container -->
@@ -237,7 +117,7 @@
 
         <!-- Footer -->
         <footer id="page-footer" class="">
-           <img src="{{asset('/images/wave-bottom.svg')}}" class="img-footer">
+            <img src="{{ asset('/images/wave-bottom.svg') }}" class="img-footer">
         </footer>
         <!-- END Footer -->
 
