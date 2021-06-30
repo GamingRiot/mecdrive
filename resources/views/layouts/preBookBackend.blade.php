@@ -87,7 +87,7 @@
         -->
     <div id="page-container" class="enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
         <!-- Side Overlay-->
-        /
+        
         <!-- END Side Overlay -->
 
         <!-- Sidebar -->
