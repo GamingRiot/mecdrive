@@ -60,6 +60,11 @@ class PreBookingClientController extends Controller
     {
         return view("clientbooking.confirm", compact("booking", "user"));
     }
+
+    public function success()
+    {
+        return view("clientbooking.success");
+
     public function payment(PreBooking $booking, ClientPrebooking $user)
     {
         return view("clientbooking.payment", compact("booking", "user"));
@@ -100,5 +105,6 @@ class PreBookingClientController extends Controller
         // echo '<pre>';
         // print_r($response);
         return redirect($response->payment_request->longurl);
+
     }
 }

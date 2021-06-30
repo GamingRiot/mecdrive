@@ -42,7 +42,10 @@
     </script>
 </head>
 
-<body>
+<body class="body-prebookbackend">
+<nav class="navbar">
+<img src="{{asset('images/wave-top.svg')}}" class="image-nav">
+</nav>
     <!-- Page Container -->
     <!--
             Available classes for #page-container:
@@ -84,39 +87,7 @@
         -->
     <div id="page-container" class="enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
         <!-- Side Overlay-->
-        <aside id="side-overlay" class="font-size-sm">
-            <!-- Side Header -->
-            <div class="content-header border-bottom">
-                <!-- User Avatar -->
-                <a class="img-link mr-1" href="javascript:void(0)">
-                    <img class="img-avatar img-avatar32" src="{{ asset('media/avatars/avatar10.jpg') }}" alt="">
-                </a>
-                <!-- END User Avatar -->
-
-                <!-- User Info -->
-                <div class="ml-2">
-                    <a class="text-dark font-w600 font-size-sm" href="javascript:void(0)">Adam McCoy</a>
-                </div>
-                <!-- END User Info -->
-
-                <!-- Close Side Overlay -->
-                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                <a class="ml-auto btn btn-sm btn-alt-danger" href="javascript:void(0)" data-toggle="layout"
-                    data-action="side_overlay_close">
-                    <i class="fa fa-fw fa-times"></i>
-                </a>
-                <!-- END Close Side Overlay -->
-            </div>
-            <!-- END Side Header -->
-
-            <!-- Side Content -->
-            <div class="content-side">
-                <p>
-                    Content..
-                </p>
-            </div>
-            <!-- END Side Content -->
-        </aside>
+        /
         <!-- END Side Overlay -->
 
         <!-- Sidebar -->
@@ -134,7 +105,7 @@
 
         <!-- END Sidebar -->
 
-        <!-- Header -->
+        
         <header id="page-header">
             <!-- Header Content -->
             <div class="content-header">
@@ -265,19 +236,8 @@
         <!-- END Main Container -->
 
         <!-- Footer -->
-        <footer id="page-footer" class="bg-body-light">
-            <div class="content py-3">
-                <div class="row font-size-sm">
-                    <div class="col-sm-6 order-sm-2 py-1 text-center text-sm-right">
-                        Crafted with <i class="fa fa-heart text-danger"></i> by <a class="font-w600"
-                            href="https://1.envato.market/ydb" target="_blank">pixelcave</a>
-                    </div>
-                    <div class="col-sm-6 order-sm-1 py-1 text-center text-sm-left">
-                        <a class="font-w600" href="https://1.envato.market/AVD6j" target="_blank">OneUI</a> &copy; <span
-                            data-toggle="year-copy"></span>
-                    </div>
-                </div>
-            </div>
+        <footer id="page-footer" class="">
+           <img src="{{asset('/images/wave-bottom.svg')}}" class="img-footer">
         </footer>
         <!-- END Footer -->
 

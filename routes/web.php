@@ -57,3 +57,4 @@ Route::get('/prebooking/{booking}/confirm/{user}/payment/checkout', [PreBookingC
 Route::view('/pages/slick', 'pages.slick');
 Route::view('/pages/datatables', 'pages.datatables');
 Route::view('/pages/blank', 'pages.blank');
+Route::get('/success', [PreBookingClientController::class, 'success'])->middleware("guest");

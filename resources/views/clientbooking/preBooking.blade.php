@@ -2,9 +2,9 @@
 
 @section('content')
     <!-- Hero -->
-    <div class="block block-rounded">
+    <div class="block-prebooking block block-rounded">
         <div class="block-header">
-            <h3 class="block-title">Pre-Booking Details</h3>
+            <h3 class="title-prebooking block-title">Pre-Booking Details</h3>
             <div class="block-options">
                 <div class="block-options-item">
                     <code></code>
@@ -25,10 +25,10 @@
                     <tr>
                         <th class="text-center" scope="row">1</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Prebooking Type:</a>
+                            <a href="#" class="table-link">Prebooking Type:</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-danger">{{ $booking->slot }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->slot }}</div>
                         </td>
                         <td class="text-center">
                             {{-- <div class="btn-group">
@@ -46,10 +46,10 @@
                     <tr>
                         <th class="text-center" scope="row">2</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Date</a>
+                            <a href="#" class="table-link">Date</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-info">{{ $booking->date->format('d-m-y') }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->date->format('d-m-y') }}</div>
                         </td>
                         <td class="text-center">
 
@@ -58,10 +58,10 @@
                     <tr>
                         <th class="text-center" scope="row">3</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Start Time</a>
+                            <a href="#" class="table-link">Start Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-info">{{ date('G:i', strtotime($booking->start_time)) }}</span>
+                            <div class="badge badge-prebooking">{{ date('G:i', strtotime($booking->start_time)) }}</div>
                         </td>
                         <td class="text-center">
 
@@ -70,10 +70,10 @@
                     <tr>
                         <th class="text-center" scope="row">4</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">End Time</a>
+                            <a href="#" class="table-link">End Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-danger">{{ date('G:i', strtotime($booking->end_time)) }}</span>
+                            <div class="badge badge-prebooking">{{ date('G:i', strtotime($booking->end_time)) }}</div>
                         </td>
                         <td class="text-center">
 
@@ -82,10 +82,10 @@
                     <tr>
                         <th class="text-center" scope="row">5</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Alloted Units</a>
+                            <a href="#" class="table-link">Alloted Units</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-info">{{ $booking->real }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->real }}</div>
                         </td>
                         <td class="text-center">
 
@@ -94,10 +94,10 @@
                     <tr>
                         <th class="text-center" scope="row">6</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Units Left</a>
+                            <a href="#" class="table-link">Units Left</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-primary">{{ $booking->display }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->display }}</div>
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
@@ -109,30 +109,30 @@
             </table>
         </div>
     </div>
-    <div class="bg-body-light">
+    <div class=" form-prebooking ">
         <div class="content content-full">
             <form class="mb-5" method="POST">
                 @csrf
                 @include('errors')
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+                    <label class="label-prebooking" for="name">Name</label>
+                    <input type="text" class="form-control input-prebooking" id="name" name="name" placeholder="Your name">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email..">
+                    <label class="label-prebooking" for="email">Email</label>
+                    <input type="email" class="form-control input-prebooking" id="email" name="email" placeholder="Your Email..">
                 </div>
                 <div class="form-group">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your mobile number">
+                    <label class="label-prebooking" for="mobile">Mobile Number</label>
+                    <input type="text" class="form-control input-prebooking" id="mobile" name="mobile" placeholder="Your mobile number">
                 </div>
                 <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" placeholder="Your address ">
+                    <label class="label-prebooking" for="address">Address</label>
+                    <input type="text" class="form-control input-prebooking" id="address" name="address" placeholder="Your address ">
                 </div>
                 <div class="form-group">
-                    <label for="state">Select State</label>
-                    <select class="form-control sel" id="state" name="state">
+                    <label class="label-prebooking" for="state">Select State</label>
+                    <select class="form-control input-prebooking sel" id="state" name="state">
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -172,12 +172,12 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="city">Select city</label>
+                    <label class="label-prebooking" for="city">Select city</label>
                     <br>
                     @php
                         $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
                         $selected = [];
-                        echo "<select class='form-control sel' id='city' name='city' >";
+                        echo "<select class='form-control input-prebooking sel' id='city' name='city' >";
                         foreach ($cityMap as $city => $pincode) {
                             $isSelected = '';
                             if (in_array($pincode, $selected)) {
@@ -191,11 +191,11 @@
                     @endphp
                 </div>
                 <div class="form-group">
-                    <label for="pincode">Pincode</label>
-                    <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Your pincode">
+                    <label class="label-prebooking" for="pincode">Pincode</label>
+                    <input type="text" class="form-control input-prebooking" id="pincode" name="pincode" placeholder="Your pincode">
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-prebooking">Submit</button>
                 </div>
             </form>
         </div>

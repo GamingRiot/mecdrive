@@ -2,8 +2,8 @@
 
 @section('content')
     <!-- Hero -->
-    <div class="block block-rounded">
-        <div class="block-header">
+    <div class="block block-rounded block-confirm">
+        <div class="block-header block-confirm">
             <h3 class="block-title">Pre-Booking Details</h3>
             <div class="block-options">
                 <div class="block-options-item">
@@ -24,8 +24,8 @@
                 <tbody>
                     <tr>
                         <th class="text-center" scope="row">1</th>
-                        <td class="font-w600 font-size-sm">
-                            <a href="#">Prebooking Type:</a>
+                        <td class="font-w600 font-size-sm ">
+                            <a href="#" class="table-link">Prebooking Type:</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-danger">{{ $booking->slot }}</span>

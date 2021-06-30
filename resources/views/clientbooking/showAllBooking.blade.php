@@ -2,10 +2,10 @@
 
 @section('content')
 
-    <div class="block block-rounded">
+    <div class="block-showall block block-rounded">
         <br><br>
         <div class="block-header">
-            <h3 class="block-title">Live Pre-Booking Slots</h3>
+            <h3 class="title-showall block-title">Live Pre-Booking Slots</h3>
             <div class="block-options">
                 <div class="block-options-item">
 
@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="block-content">
-            <table class="table table-vcenter">
+            <table class="table-showallbooking table table-vcenter">
                 <thead>
 
                     <tr>
@@ -34,7 +34,7 @@
                             <tr>
                                 <th class="text-center" scope="row">{{ $loop->iteration }}</th>
                                 <td class="font-w600 font-size-sm">
-                                    <a
+                                    <a class="table-link"
                                         href="{{ route('prebooking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell">
