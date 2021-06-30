@@ -43,9 +43,9 @@
 </head>
 
 <body class="body-prebookbackend">
-<nav class="navbar">
-<img src="{{asset('images/wave-top.svg')}}" class="image-nav">
-</nav>
+    <nav class="navbar">
+        <img src="{{ asset('images/wave-top.svg') }}" class="image-nav">
+    </nav>
     <!-- Page Container -->
     <!--
             Available classes for #page-container:
@@ -87,7 +87,7 @@
         -->
     <div id="page-container" class="enable-page-overlay sidebar-dark side-scroll page-header-fixed main-content-narrow">
         <!-- Side Overlay-->
-        
+
         <!-- END Side Overlay -->
 
         <!-- Sidebar -->
@@ -104,6 +104,7 @@
             -->
 
         <!-- END Sidebar -->
+
 
         
         <header id="page-header">
@@ -184,49 +185,8 @@
 
                     <!-- Notifications Dropdown -->
 
-                    <!-- END Notifications Dropdown -->
 
-                    <!-- Toggle Side Overlay -->
-                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
 
-                    <!-- END Toggle Side Overlay -->
-                </div>
-                <!-- END Right Section -->
-            </div>
-            <!-- END Header Content -->
-
-            <!-- Header Search -->
-            <div id="page-header-search" class="overlay-header bg-white">
-                <div class="content-header">
-                    <form class="w-100" action="/dashboard" method="POST">
-                        @csrf
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                                <button type="button" class="btn btn-alt-danger" data-toggle="layout"
-                                    data-action="header_search_off">
-                                    <i class="fa fa-fw fa-times-circle"></i>
-                                </button>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search or hit ESC.."
-                                id="page-header-search-input" name="page-header-search-input">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <!-- END Header Search -->
-
-            <!-- Header Loader -->
-            <!-- Please check out the Loaders page under Components category to see examples of showing/hiding it -->
-            <div id="page-header-loader" class="overlay-header bg-white">
-                <div class="content-header">
-                    <div class="w-100 text-center">
-                        <i class="fa fa-fw fa-circle-notch fa-spin"></i>
-                    </div>
-                </div>
-            </div>
-            <!-- END Header Loader -->
-        </header>
         <!-- END Header -->
 
         <!-- Main Container -->
@@ -237,7 +197,7 @@
 
         <!-- Footer -->
         <footer id="page-footer" class="">
-           <img src="{{asset('/images/wave-bottom.svg')}}" class="img-footer">
+            <img src="{{ asset('/images/wave-bottom.svg') }}" class="img-footer">
         </footer>
         <!-- END Footer -->
 
