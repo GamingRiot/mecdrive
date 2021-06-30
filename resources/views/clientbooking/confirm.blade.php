@@ -2,9 +2,9 @@
 
 @section('content')
     <!-- Hero -->
-    <div class="block block-rounded block-confirm">
+    <div class="block-prebooking block block-rounded block-confirm">
         <div class="block-header block-confirm">
-            <h3 class="block-title">Pre-Booking Details</h3>
+            <h3 class="title-prebooking block-title">Pre-Booking Details</h3>
             <div class="block-options">
                 <div class="block-options-item">
                     <code></code>
@@ -28,7 +28,7 @@
                             <a href="#" class="table-link">Prebooking Type:</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-danger">{{ $booking->slot }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->slot }}</div>
                         </td>
                         <td class="text-center">
                             {{-- <div class="btn-group">
@@ -46,10 +46,10 @@
                     <tr>
                         <th class="text-center" scope="row">2</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Date</a>
+                            <a href="#" class="table-link">Date</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-info">{{ $booking->date->format('d-m-y') }}</span>
+                            <div class="badge badge-prebooking">{{ $booking->date->format('d-m-y') }}</div>
                         </td>
                         <td class="text-center">
 
@@ -58,10 +58,10 @@
                     <tr>
                         <th class="text-center" scope="row">3</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Start Time</a>
+                            <a href="#" class="table-link">Start Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-info">{{ date('G:i', strtotime($booking->start_time)) }}</span>
+                            <div class="badge badge-prebooking">{{ date('G:i', strtotime($booking->start_time)) }}</div>
                         </td>
                         <td class="text-center">
 
@@ -70,10 +70,10 @@
                     <tr>
                         <th class="text-center" scope="row">4</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">End Time</a>
+                            <a href="#" class="table-link">End Time</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-danger">{{ date('G:i', strtotime($booking->end_time)) }}</span>
+                            <div class="badge badge-prebooking">{{ date('G:i', strtotime($booking->end_time)) }}</div>
                         </td>
                         <td class="text-center">
 
@@ -82,10 +82,10 @@
                     <tr>
                         <th class="text-center" scope="row">5</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Alloted Units</a>
+                            <a class="table-link"href="#">Alloted Units</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-info">{{ $booking->real }}</span>
+                            <span class="badge badge-prebooking">{{ $booking->real }}</span>
                         </td>
                         <td class="text-center">
 
@@ -94,10 +94,10 @@
                     <tr>
                         <th class="text-center" scope="row">6</th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Units Left</a>
+                            <a class="table-link"href="#">Units Left</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <span class="badge badge-primary">{{ $booking->display }}</span>
+                            <span class="badge badge-prebooking">{{ $booking->display }}</span>
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
@@ -109,32 +109,32 @@
             </table>
         </div>
     </div>
-    <div class="bg-body-light">
+    <div class="form-prebooking">
         <div class="content content-full">
             <form class="mb-5" method="GET">
                 @csrf
                 @include('errors')
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" disabled>
+                    <label class="label-prebooking"for="name">Name</label>
+                    <input type="text" class="form-control input-prebooking" id="name" name="name" value="{{ $user->name }}" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}" disabled>
+                    <label class="label-prebooking"for="email">Email</label>
+                    <input type="email" class="form-control input-prebooking" id="email" name="email" value="{{ $user->email }}" disabled>
                 </div>
                 <div class="form-group">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" class="form-control" id="mobile" name="mobile" value="{{ $user->mobile }}"
+                    <label class="label-prebooking"for="mobile">Mobile Number</label>
+                    <input type="text" class="form-control input-prebooking" id="mobile" name="mobile" value="{{ $user->mobile }}"
                         disabled>
                 </div>
                 <div class="form-group">
-                    <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}"
+                    <label class="label-prebooking"for="address">Address</label>
+                    <input type="text" class="form-control input-prebooking" id="address" name="address" value="{{ $user->address }}"
                         disabled>
                 </div>
                 <div class="form-group">
-                    <label for="state">Select State</label>
-                    <select class="form-control sel" id="state" name="state" value="{{ $user->state }}" disabled>
+                    <label class="label-prebooking"for="state">Select State</label>
+                    <select class="form-control input-prebooking sel" id="state" name="state" value="{{ $user->state }}" disabled>
                         <option value="{{ $user->state }}">{{ $user->state }}</option>
                         {{-- <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -175,7 +175,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="city">Select city</label>
+                    <label class="label-prebooking"for="city">Select city</label>
                     <br>
                     @php
                         $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
@@ -194,13 +194,13 @@
                     @endphp
                 </div>
                 <div class="form-group">
-                    <label for="pincode">Pincode</label>
-                    <input type="text" class="form-control" id="pincode" name="pincode" value="{{ $user->pincode }}"
+                    <label class="label-prebooking"for="pincode">Pincode</label>
+                    <input type="text" class="form-control input-prebooking" id="pincode" name="pincode" value="{{ $user->pincode }}"
                         disabled>
                 </div>
                 <div class="form-group">
                     <a href="{{ route('payment', ['booking' => $booking->id, 'user' => $user->id]) }}"><button
-                            type="button" class="btn btn-primary">Proceed To Checkout</button></a>
+                            type="button" class="btn btn-prebooking">Proceed To Checkout</button></a>
                 </div>
             </form>
         </div>

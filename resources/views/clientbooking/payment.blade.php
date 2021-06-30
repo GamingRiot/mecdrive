@@ -2,9 +2,9 @@
 
 @section('content')
     <!-- Hero -->
-    <div class="block block-rounded">
+    <div class="block-prebooking block block-rounded">
         <div class="block-header">
-            <h3 class="block-title">Payment</h3>
+            <h3 class="title-prebooking block-title">Payment</h3>
             <div class="block-options">
                 <div class="block-options-item">
                     <code></code>
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="block-content">
-            <table class="table table-vcenter">
+            <table class="table-showallbooking table table-vcenter">
                 <thead>
                     <tr>
                         <th class="text-center" style="width: 50px;"></th>
@@ -49,9 +49,9 @@
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
                             @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
-                                <a href="#">Pre-Book Rental Fee</a>
+                                <a class="table-link" href="#">Pre-Book Rental Fee</a>
                             @endif
-                            <a href="#">Pre-Book Sale Fee</a>
+                            <a  class="table-link" href="#">Pre-Book Sale Fee</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
 
@@ -75,9 +75,9 @@
                         <td class="font-w600 font-size-sm">
 
                             @if ($booking->slot === 'FREE' or $booking->slot === 'RENT')
-                                <a href="#">Pre-Book Rental Fee after break-up</a>
+                                <a class="table-link" href="#">Pre-Book Rental Fee after break-up</a>
                             @else
-                                <a href="#">Pre-Book Sale Fee after break-up</a>
+                                <a class="table-link" href="#">Pre-Book Sale Fee after break-up</a>
                             @endif
                         </td>
                         <td class="d-none d-sm-table-cell">
@@ -99,7 +99,7 @@
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Delivery Charges</a>
+                            <a class="table-link" href="#">Delivery Charges</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             Rs. XYZ
@@ -113,7 +113,7 @@
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Total Amount</a>
+                            <a class="table-link" href="#">Total Amount</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             Rs. XYZ
@@ -127,7 +127,7 @@
                     <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="#">Expected Delivery Date</a>
+                            <a class="table-link" href="#">Expected Delivery Date</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             7-8 Business Days
@@ -141,7 +141,7 @@
                     {{-- <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a href="be_pages_generic_profile.html">Susan Day</a>
+                            <a class="table-link" href="be_pages_generic_profile.html">Susan Day</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
                             <span class="badge badge-warning">Trial</span>
@@ -166,7 +166,7 @@
 
     <div class="form-group" style="margin-left:20px;">
         <a href="{{ route('checkout', ['booking' => $booking->id, 'user' => $user->id]) }}"><button type="button"
-                class="btn btn-primary">Proceed To Checkout</button></a>
+                class="btn btn-prebooking">Proceed To Checkout</button></a>
     </div>
     <!-- END Hero -->
 
