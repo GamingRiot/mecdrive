@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\PreBooking;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Exports\ClientPreBookingExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class PreBookingController extends Controller
 {
@@ -22,13 +25,14 @@ class PreBookingController extends Controller
         $validatedRequest = request()->validate([
             'date' => 'required|date',
             'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i',
+            'end_time' => 'required|date_format:H:i|gt:start_time',
             'slot' => 'required',
             'display' => 'required|integer',
-            'real' => 'required|integer',
+            'real' => 'required|integer|lte:display',
             'city' => 'required',
             'price' => 'integer',
             'price_2month' => 'integer',
+            'price_3month' => 'integer',
             'title' => 'required|min:3'
         ]);
         $booking = new PreBooking($validatedRequest);
@@ -80,4 +84,8 @@ class PreBookingController extends Controller
     {
         return view("booking.booking", compact("booking"));
     }
+    // public function export()
+    // {
+    //     return Excel::download(new ClientPreBookingExport, 'clients.xlsx');
+    // }
 }

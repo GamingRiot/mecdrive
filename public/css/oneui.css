@@ -27422,6 +27422,8 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 }
 .request-body {
     text-align: center;
+    position: relative;
+    bottom: 200px;
 }
 .request-img {
     width: 500px;

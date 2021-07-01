@@ -91,7 +91,7 @@ class PreBookingClientController extends Controller
             'amount' => '2500',
             'phone' => '9999999999',
             'buyer_name' => 'John Doe',
-            'redirect_url' => 'http://www.example.com/redirect/',
+            'redirect_url' => 'http://127.0.0.1:8000/success',
             'send_email' => true,
             'send_sms' => true,
             'email' => 'foo@example.com',

@@ -27,6 +27,7 @@ Route::get("/signout", function () {
     Auth::logout();
     return redirect("/admin/login");
 });
+Route::get('/export', [PreBookingController::class, 'export'])->middleware("auth");
 Route::get('/create', [PreBookingController::class, 'create'])->middleware("auth");
 Route::post('/create', [PreBookingController::class, 'store'])->middleware("auth");
 Route::get('/bookings', [PreBookingController::class, 'index'])->middleware("auth");

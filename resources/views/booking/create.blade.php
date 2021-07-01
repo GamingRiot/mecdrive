@@ -40,8 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="date">Date of Pre-Booking</label>
-                                <input type="text" class="js-flatpickr form-control bg-white" id="date" name="date"
-                                    placeholder="Y-m-d">
+                                <input type="text" class="form-control bg-white" id="date" name="date" placeholder="Y-m-d">
                             </div>
                             <div class="form-group">
                                 <label for="start_time">Start Time(12-hour format)</label>
@@ -58,7 +57,8 @@
                             <div class="form-group">
                                 <label for="slot">Select</label>
                                 <select class="selectpicker form-control" id="slot" name="slot">
-                                    <option value="FREE" selected>FREE</option>
+                                    <option value="null" selected>Choose an option</option>
+                                    <option value="FREE">FREE</option>
                                     <option value="RENT">RENTAL</option>
                                     <option value="SALE">SALE</option>
                                 </select>
@@ -79,12 +79,17 @@
                             <div class="form-group">
                                 <label for="price">Price(in Rs.)</label>
                                 <input type="text" class="form-control" id="price" name="price"
-                                    placeholder="Enter PreBooking Price" disabled>
+                                    placeholder="Enter PreBooking Price">
                             </div>
                             <div class="form-group">
                                 <label for="price_2month">Price for 2 month(in Rs.)</label>
                                 <input type="text" class="form-control" id="price_2month" name="price_2month"
-                                    placeholder="Enter PreBooking Price" disabled>
+                                    placeholder="Enter PreBooking Price">
+                            </div>
+                            <div class="form-group">
+                                <label for="price_3month">Price for 3 month(in Rs.)</label>
+                                <input type="text" class="form-control" id="price_3month" name="price_3month"
+                                    placeholder="Enter PreBooking Price">
                             </div>
                             <div class="form-group">
                                 <label for="city">Select city</label>
@@ -121,5 +126,6 @@
         </div>
     </div>
     <!-- END Page Content -->
+
 
 @endsection

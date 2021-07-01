@@ -577,10 +577,30 @@
     </script> --}}
     <script>
         document.getElementById('slot').onchange = function() {
-            document.getElementById("price").disabled = (this.value === 'FREE');
-            document.getElementById("price_2month").disabled = (this.value === 'FREE');
-            document.getElementById("price_2month").disabled = (this.value === 'SALE');
+            if (this.value === 'FREE') {
+                document.getElementById("price").disabled = true;
+                document.getElementById("price_2month").disabled = true;
+                document.getElementById("price_3month").disabled = true;
+            } else if (this.value === 'SALE') {
+                document.getElementById("price").disabled = false;
+                document.getElementById("price_2month").disabled = true;
+                document.getElementById("price_3month").disabled = true;
+            } else {
+                document.getElementById("price").disabled = false;
+                document.getElementById("price_2month").disabled = false;
+                document.getElementById("price_3month").disabled = false;
+            }
+
+            // document.getElementById("price_2month").disabled = (this.value === 'SALE');
+            // document.getElementById("price_3month").disabled = (this.value === 'SALE');
         }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#date").datepicker({
+                startDate: '+0d'
+            });
+        });
     </script>
 
     <!-- Laravel Scaffolding JS -->
