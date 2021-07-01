@@ -25,7 +25,7 @@ class PreBookingController extends Controller
         $validatedRequest = request()->validate([
             'date' => 'required|date',
             'start_time' => 'required|date_format:H:i',
-            'end_time' => 'required|date_format:H:i|gt:start_time',
+            'end_time' => 'required|date_format:H:i|after:start_time',
             'slot' => 'required',
             'display' => 'required|integer',
             'real' => 'required|integer|lte:display',
@@ -54,7 +54,8 @@ class PreBookingController extends Controller
         $user->display = request()->input('display');
         $user->real = request()->input('real');
         $user->price = request()->input('price');
-        $user->price = request()->input('price_2month');
+        $user->price_2month = request()->input('price_2month');
+        $user->price_3month = request()->input('price_3month');
         $user->city = implode(",", request()->input('city'));
         $user->save();
         return redirect()->back()->with("success", "Update Successful!");
@@ -67,6 +68,9 @@ class PreBookingController extends Controller
     {
         $user = PreBooking::where("id", $booking->id)->first();
         $user->display = request()->input('display');
+        $user->price = request()->input('price');
+        $user->price_2month = request()->input('price_2month');
+        $user->price_3month = request()->input('price_3month');
         $user->save();
         return redirect()->back()->with("success", "Update Successful!");
     }

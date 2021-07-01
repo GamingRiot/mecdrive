@@ -82,6 +82,11 @@
                                 value="{{ $booking->price_2month }}" disabled>
                         </div>
                         <div class="form-group">
+                            <label for="price_3month">Price for 3 month(in Rs.)</label>
+                            <input type="text" class="form-control" id="price_3month" name="price_3month"
+                                value="{{ $booking->price_3month }}" disabled>
+                        </div>
+                        <div class="form-group">
                             <label for="city">Multiple Select</label>
                             @php
                                 

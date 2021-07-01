@@ -77,12 +77,17 @@
                             <div class="form-group">
                                 <label for="price">Price(in Rs.)</label>
                                 <input type="text" class="form-control" id="price" name="price"
-                                    value="{{ $booking->price }}" disabled>
+                                    value="{{ $booking->price }}">
                             </div>
                             <div class="form-group">
                                 <label for="price_2month">Price for 2 month(in Rs.)</label>
                                 <input type="text" class="form-control" id="price_2month" name="price_2month"
-                                    value="{{ $booking->price_2month }}" disabled>
+                                    value="{{ $booking->price_2month }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="price_3month">Price for 3 month(in Rs.)</label>
+                                <input type="text" class="form-control" id="price_3month" name="price_3month"
+                                    value="{{ $booking->price_3month }}">
                             </div>
                             <div class="form-group">
                                 <label for="city">Select City</label>

@@ -26,8 +26,8 @@ class PreBookingClientController extends Controller
         // $verification = Nexmo::verify()->start([]);
         $validatedRequest = request()->validate([
             'name' => 'required|min:3',
-            'email' => 'required|email',
-            'mobile' => 'required|integer|min:10',
+            'email' => 'required|email|unique:client_prebookings',
+            'mobile' => 'required|integer|min:10|unique:client_prebookings',
             'address' => 'required|min:5',
             'city' => 'required',
             'state' => 'required|',
