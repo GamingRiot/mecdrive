@@ -85,7 +85,7 @@
                             <a href="#" class="table-link">Alloted Units</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <div class="badge badge-prebooking">{{ $booking->real }}</div>
+                            <div class="badge badge-prebooking">{{ $booking->display }}</div>
                         </td>
                         <td class="text-center">
 
@@ -97,7 +97,7 @@
                             <a href="#" class="table-link">Units Left</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            <div class="badge badge-prebooking">{{ $booking->display }}</div>
+                            <div class="badge badge-prebooking">{{ $booking->real }}</div>
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
@@ -120,15 +120,18 @@
                 </div>
                 <div class="form-group">
                     <label class="label-prebooking" for="email">Email</label>
-                    <input type="email" class="form-control input-prebooking" id="email" name="email" placeholder="Your Email..">
+                    <input type="email" class="form-control input-prebooking" id="email" name="email"
+                        placeholder="Your Email..">
                 </div>
                 <div class="form-group">
                     <label class="label-prebooking" for="mobile">Mobile Number</label>
-                    <input type="text" class="form-control input-prebooking" id="mobile" name="mobile" placeholder="Your mobile number">
+                    <input type="text" class="form-control input-prebooking" id="mobile" name="mobile"
+                        placeholder="Your mobile number">
                 </div>
                 <div class="form-group">
                     <label class="label-prebooking" for="address">Address</label>
-                    <input type="text" class="form-control input-prebooking" id="address" name="address" placeholder="Your address ">
+                    <input type="text" class="form-control input-prebooking" id="address" name="address"
+                        placeholder="Your address ">
                 </div>
                 <div class="form-group">
                     <label class="label-prebooking" for="state">Select State</label>
@@ -192,7 +195,8 @@
                 </div>
                 <div class="form-group">
                     <label class="label-prebooking" for="pincode">Pincode</label>
-                    <input type="text" class="form-control input-prebooking" id="pincode" name="pincode" placeholder="Your pincode">
+                    <input type="text" class="form-control input-prebooking" id="pincode" name="pincode"
+                        placeholder="Your pincode">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-prebooking">Submit</button>

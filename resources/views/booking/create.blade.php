@@ -47,12 +47,17 @@
                                 <input type="text" class="js-flatpickr form-control bg-white" id="start_time"
                                     name="start_time" data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
                                     data-time_24hr="false">
+                                <div id="start_time_validation" class="text-danger"></div>
                             </div>
                             <div class="form-group">
                                 <label for="end_time">End Time(24-hour format)</label>
                                 <input type="text" class="js-flatpickr form-control bg-white" id="end_time" name="end_time"
                                     data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
                                     data-time_24hr="false">
+                            </div>
+                            <div class="form-group">
+                                <label for="end_time">Duration</label>
+                                <input type="text" class="form-control" disabled id="duration">
                             </div>
                             <div class="form-group">
                                 <label for="slot">Select</label>
@@ -115,7 +120,7 @@
                                     placeholder="Enter Terms and Conditions"></textarea>
                             </div> --}}
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button id="form_submit" type="submit" class="btn btn-primary">Submit</button>
                             </div>
 
                         </div>
@@ -127,5 +132,50 @@
     </div>
     <!-- END Page Content -->
 
+    <script>
+        const validateTime = () => {
+            const prebookingDate = document.getElementById("date");
+            const startTime = document.getElementById("start_time")
+            const endTime = document.getElementById("end_time")
+            const startTimeValidation = document.getElementById("start_time_validation");
+            const formSubmit = document.getElementById("form_submit");
+            const duration = document.getElementById("duration");
+
+            startTime.addEventListener("change", () => {
+                startTimeValidation.innerHTML = ""
+                const startTimeParts = startTime.value.split(":")
+                const prebookingDateParts = prebookingDate.value.split("/")
+                const currentDate = new Date((new Date()).setHours((new Date()).getHours() + 6));
+                const checkDate = new Date(prebookingDateParts[2], parseInt(prebookingDateParts[0]) - 1,
+                    prebookingDateParts[
+                        1], startTimeParts[0], startTimeParts[1]);
+                console.log(currentDate, checkDate)
+                if (currentDate > checkDate) {
+                    startTimeValidation.innerHTML = "Start time must be atleast 6 hours apart from now.";
+                    formSubmit.disabled = true;
+                } else {
+                    formSubmit.disabled = false;
+                }
+            });
+
+            endTime.addEventListener("change", () => {
+                const startTimeParts = startTime.value.split(":");
+                const endTimeParts = endTime.value.split(":");
+                const startTimeHours = parseInt(startTimeParts[0]);
+                const startTimeMinutes = parseInt(startTimeParts[1]);
+                const endTimeHours = parseInt(endTimeParts[0]);
+                const endTimeMinutes = parseInt(endTimeParts[1]);
+                let durationHours = endTimeHours - startTimeHours;
+                let durationMinutes = endTimeMinutes - startTimeMinutes;
+                if (durationMinutes < 0) {
+                    durationMinutes = Math.abs(durationMinutes);
+                    durationHours -= 1;
+                }
+                duration.value = durationHours + " hours " + durationMinutes + " minutes";
+            })
+
+        }
+        validateTime();
+    </script>
 
 @endsection
