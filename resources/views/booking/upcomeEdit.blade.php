@@ -44,13 +44,13 @@
                                     value="{{ $booking->date }}">
                             </div>
                             <div class="form-group">
-                                <label for="start_time">Start Time(12-hour format)</label>
+                                <label for="start_time">Start Time(24-hour format)</label>
                                 <input type="text" class="js-flatpickr form-control bg-white" id="start_time"
                                     name="start_time" data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
                                     data-time_24hr="false" value="{{ $booking->start_time }}">
                             </div>
                             <div class="form-group">
-                                <label for="end_time">End Time(12-hour format)</label>
+                                <label for="end_time">End Time(24-hour format)</label>
                                 <input type="text" class="js-flatpickr form-control bg-white" id="end_time" name="end_time"
                                     data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
                                     data-time_24hr="false" value="{{ $booking->end_time }}">
