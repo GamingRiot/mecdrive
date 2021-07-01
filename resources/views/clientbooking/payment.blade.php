@@ -102,7 +102,7 @@
                             <a class="table-link" href="#">Delivery Charges</a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            Rs. XYZ
+                            Rs.0
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
@@ -124,20 +124,20 @@
                             </div>
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">
-                            <a class="table-link" href="#">Expected Delivery Date</a>
+                            <a class="table-link" href="#"></a>
                         </td>
                         <td class="d-none d-sm-table-cell">
-                            7-8 Business Days
+
                         </td>
                         <td class="text-center">
                             <div class="btn-group">
 
                             </div>
                         </td>
-                    </tr>
+                    </tr> --}}
                     {{-- <tr>
                         <th class="text-center" scope="row"></th>
                         <td class="font-w600 font-size-sm">

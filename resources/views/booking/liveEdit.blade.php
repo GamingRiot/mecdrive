@@ -58,11 +58,11 @@
                             <div class="form-group">
                                 <label for="slot">Select</label>
                                 <select class="selectpicker form-control" id="slot" name="slot" disabled>
+                                    <option value="null">Choose an option</option>
                                     <option value="FREE" @if (strtoupper($booking->slot) === 'FREE') selected @endif>FREE</option>
                                     <option value="RENT" @if (strtoupper($booking->slot) === 'RENT') selected @endif>RENTAL</option>
                                     <option value="SALE" @if (strtoupper($booking->slot) === 'SALE') selected @endif>SALE</option>
                                 </select>
-
                             </div>
                             <div class="form-group">
                                 <label for="display">Number of Display Units</label>
@@ -75,19 +75,28 @@
                                     disabled>
                             </div>
                             <div class="form-group">
-                                <label for="price">Price(in Rs.)</label>
-                                <input type="text" class="form-control" id="price" name="price"
-                                    value="{{ $booking->price }}">
+                                <label for="price" id="price_1month">Price</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                                    <input type="text" class="form-control" id="price" name="price"
+                                        value="{{ $booking->price }}">
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group price_month_container">
                                 <label for="price_2month">Price for 2 month(in Rs.)</label>
-                                <input type="text" class="form-control" id="price_2month" name="price_2month"
-                                    value="{{ $booking->price_2month }}">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                                    <input type="text" class="form-control" id="price_2month" name="price_2month"
+                                        value="{{ $booking->price_2month }}">
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group price_month_container">
                                 <label for="price_3month">Price for 3 month(in Rs.)</label>
-                                <input type="text" class="form-control" id="price_3month" name="price_3month"
-                                    value="{{ $booking->price_3month }}">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                                    <input type="text" class="form-control" id="price_3month" name="price_3month"
+                                        value="{{ $booking->price_3month }}">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="city">Select City</label>
@@ -124,4 +133,93 @@
         </div>
     </div>
     <!-- END Page Content -->
+    <style>
+        .price_month_container {
+            display: none;
+        }
+
+        .price_month_container.show {
+            display: block;
+        }
+
+    </style>
+    <script>
+        const validateTime = () => {
+            const prebookingDate = document.getElementById("date");
+            const startTime = document.getElementById("start_time")
+            const endTime = document.getElementById("end_time")
+            const startTimeValidation = document.getElementById("start_time_validation");
+            const formSubmit = document.getElementById("form_submit");
+            const duration = document.getElementById("duration");
+            const slot = document.getElementById("slot");
+
+            function onChangeStartTime() {
+                startTimeValidation.innerHTML = ""
+                const startTimeParts = startTime.value.split(":")
+                const prebookingDateParts = prebookingDate.value.split("/")
+                const currentDate = new Date((new Date()).setHours((new Date()).getHours() + 6));
+                const checkDate = new Date(prebookingDateParts[2], parseInt(prebookingDateParts[0]) - 1,
+                    prebookingDateParts[
+                        1], startTimeParts[0], startTimeParts[1]);
+                console.log(currentDate, checkDate)
+                if (currentDate > checkDate) {
+                    startTimeValidation.innerHTML = "Start time must be atleast 6 hours apart from now.";
+                    formSubmit.disabled = true;
+                } else {
+                    formSubmit.disabled = false;
+                }
+            }
+
+            startTime.addEventListener("change", onChangeStartTime);
+            startTime.addEventListener("click", onChangeStartTime);
+            startTime.addEventListener("focus", onChangeStartTime);
+            startTime.addEventListener("blur", onChangeStartTime);
+
+            slot.addEventListener("change", (event) => {
+                if (event.target.value == "FREE") {
+                    document.getElementById("price").value = 0
+                }
+                if (event.target.value == "RENT") {
+                    document.getElementById("price").value = ""
+                    document.getElementById("price_1month").innerHTML = "Price for 1 month(in Rs.)";
+
+                    for (let index = 0; index < document.getElementsByClassName("price_month_container")
+                        .length; index++) {
+                        const element = document.getElementsByClassName("price_month_container")[index];
+                        element.classList.add("show")
+                    }
+
+                } else {
+                    // document.getElementById("price").value = ""
+                    document.getElementById("price_1month").innerHTML = "Price(in Rs.)";
+                    for (let index = 0; index < document.getElementsByClassName("price_month_container")
+                        .length; index++) {
+                        const element = document.getElementsByClassName("price_month_container")[index];
+                        element.classList.remove("show")
+                    }
+                }
+                if (event.target.value == "SALE") {
+                    document.getElementById("price").value = ""
+                }
+            })
+
+            endTime.addEventListener("change", () => {
+                const startTimeParts = startTime.value.split(":");
+                const endTimeParts = endTime.value.split(":");
+                const startTimeHours = parseInt(startTimeParts[0]);
+                const startTimeMinutes = parseInt(startTimeParts[1]);
+                const endTimeHours = parseInt(endTimeParts[0]);
+                const endTimeMinutes = parseInt(endTimeParts[1]);
+                let durationHours = endTimeHours - startTimeHours;
+                let durationMinutes = endTimeMinutes - startTimeMinutes;
+                if (durationMinutes < 0) {
+                    durationMinutes = Math.abs(durationMinutes);
+                    durationHours -= 1;
+                }
+                duration.value = durationHours + " hours " + durationMinutes + " minutes";
+            })
+
+        }
+        validateTime();
+    </script>
 @endsection

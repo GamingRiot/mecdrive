@@ -82,19 +82,28 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="price">Price(in Rs.)</label>
-                                <input type="text" class="form-control" id="price" name="price"
-                                    placeholder="Enter PreBooking Price">
+                                <label for="price" id="price_1month">Price</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                                    <input type="text" class="form-control" id="price" name="price"
+                                        placeholder="Enter PreBooking Price">
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group price_month_container">
                                 <label for="price_2month">Price for 2 month(in Rs.)</label>
-                                <input type="text" class="form-control" id="price_2month" name="price_2month"
-                                    placeholder="Enter PreBooking Price">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                                    <input type="text" class="form-control" id="price_2month" name="price_2month"
+                                        placeholder="Enter PreBooking Price">
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group price_month_container">
                                 <label for="price_3month">Price for 3 month(in Rs.)</label>
-                                <input type="text" class="form-control" id="price_3month" name="price_3month"
-                                    placeholder="Enter PreBooking Price">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text">₹</span></div>
+                                    <input type="text" class="form-control" id="price_3month" name="price_3month"
+                                        placeholder="Enter PreBooking Price">\
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="city">Select city</label>
@@ -131,7 +140,16 @@
         </div>
     </div>
     <!-- END Page Content -->
+    <style>
+        .price_month_container {
+            display: none;
+        }
 
+        .price_month_container.show {
+            display: block;
+        }
+
+    </style>
     <script>
         const validateTime = () => {
             const prebookingDate = document.getElementById("date");
@@ -140,8 +158,9 @@
             const startTimeValidation = document.getElementById("start_time_validation");
             const formSubmit = document.getElementById("form_submit");
             const duration = document.getElementById("duration");
+            const slot = document.getElementById("slot");
 
-            startTime.addEventListener("change", () => {
+            function onChangeStartTime() {
                 startTimeValidation.innerHTML = ""
                 const startTimeParts = startTime.value.split(":")
                 const prebookingDateParts = prebookingDate.value.split("/")
@@ -156,7 +175,40 @@
                 } else {
                     formSubmit.disabled = false;
                 }
-            });
+            }
+
+            startTime.addEventListener("change", onChangeStartTime);
+            startTime.addEventListener("click", onChangeStartTime);
+            startTime.addEventListener("focus", onChangeStartTime);
+            startTime.addEventListener("blur", onChangeStartTime);
+
+            slot.addEventListener("change", (event) => {
+                if (event.target.value == "FREE") {
+                    document.getElementById("price").value = 0
+                }
+                if (event.target.value == "RENT") {
+                    document.getElementById("price").value = ""
+                    document.getElementById("price_1month").innerHTML = "Price for 1 month(in Rs.)";
+
+                    for (let index = 0; index < document.getElementsByClassName("price_month_container")
+                        .length; index++) {
+                        const element = document.getElementsByClassName("price_month_container")[index];
+                        element.classList.add("show")
+                    }
+
+                } else {
+                    // document.getElementById("price").value = ""
+                    document.getElementById("price_1month").innerHTML = "Price(in Rs.)";
+                    for (let index = 0; index < document.getElementsByClassName("price_month_container")
+                        .length; index++) {
+                        const element = document.getElementsByClassName("price_month_container")[index];
+                        element.classList.remove("show")
+                    }
+                }
+                if (event.target.value == "SALE") {
+                    document.getElementById("price").value = ""
+                }
+            })
 
             endTime.addEventListener("change", () => {
                 const startTimeParts = startTime.value.split(":");

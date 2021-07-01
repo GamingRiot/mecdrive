@@ -79,7 +79,7 @@
 
                         </td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                         <th class="text-center" scope="row">5</th>
                         <td class="font-w600 font-size-sm">
                             <a href="#" class="table-link">Alloted Units</a>
@@ -90,7 +90,7 @@
                         <td class="text-center">
 
                         </td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                         <th class="text-center" scope="row">6</th>
                         <td class="font-w600 font-size-sm">
