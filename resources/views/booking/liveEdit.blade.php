@@ -48,6 +48,7 @@
                                 <input type="text" class="js-flatpickr form-control bg-white" id="start_time"
                                     name="start_time" data-enable-time="true" data-no-calendar="true" data-date-format="H:i"
                                     data-time_24hr="false" value="{{ $booking->start_time }}" disabled>
+                                <div id="start_time_validation" class="text-danger"></div>
                             </div>
                             <div class="form-group">
                                 <label for="end_time">End Time(24-hour format)</label>
@@ -122,7 +123,7 @@
                                     placeholder="Enter Terms and Conditions"></textarea>
                             </div> --}}
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button id="form_submit" type="submit" class="btn btn-primary">Submit</button>
                             </div>
 
                         </div>

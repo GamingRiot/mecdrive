@@ -29,6 +29,10 @@
                             {{ session()->get('delete') }}
                         </div>
                     @endif
+                    @php
+                        $today = date('Y-m-d');
+                        $today_time = strtotime($today);
+                    @endphp
                     @forelse ($bookings->reverse() as $booking)
                         @if (date('Y-m-d', strtotime($booking['date'])) == date('Y-m-d'))
                             <tr>
