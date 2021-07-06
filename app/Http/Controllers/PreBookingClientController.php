@@ -17,7 +17,20 @@ class PreBookingClientController extends Controller
         $bookings = PreBooking::all();
         return view("clientbooking.showAllBooking", compact("bookings"));
     }
+    public function city(PreBooking $booking)
+    {
+        return view("clientbooking.confirmcity", compact("booking"));
+    }
+    public function confirmCity(PreBooking $booking)
+    {
+        $bookingCities = explode(',', "$booking->city");
+        if (in_array(request()->input('city'), $bookingCities)) {
+            return redirect($booking->link);
+        }
+        return redirect('/prebooking/' . $booking->id);
+    }
     public function show(PreBooking $booking)
+
     {
         return view("clientbooking.preBooking", compact("booking"));
     }

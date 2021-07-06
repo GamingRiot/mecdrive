@@ -106,6 +106,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="link">Product link</label>
+                                <input type="text" class="form-control" id="link" name="link"
+                                    placeholder="Enter Product Link">
+                            </div>
+                            <div class="form-group">
                                 <label for="city">Select city</label>
                                 @php
                                     $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);
@@ -164,7 +169,7 @@
                 startTimeValidation.innerHTML = ""
                 const startTimeParts = startTime.value.split(":")
                 const prebookingDateParts = prebookingDate.value.split("/")
-                const currentDate = new Date((new Date()).setHours((new Date()).getHours() + 6));
+                const currentDate = new Date((new Date()).setHours((new Date()).getHours() + 0));
                 const checkDate = new Date(prebookingDateParts[2], parseInt(prebookingDateParts[0]) - 1,
                     prebookingDateParts[
                         1], startTimeParts[0], startTimeParts[1]);

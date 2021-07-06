@@ -29,6 +29,7 @@ class PreBookingController extends Controller
             'slot' => 'required',
             'display' => 'required|integer',
             'real' => 'required|integer|lte:display',
+            'link' => 'required|url',
             'city' => 'required',
             'price' => 'integer',
             'price_2month' => 'integer',

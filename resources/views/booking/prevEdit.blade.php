@@ -97,6 +97,11 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="link">Product link</label>
+                            <input type="text" class="form-control" id="link" name="link" value="{{ $booking->link }}"
+                                disabled>
+                        </div>
+                        <div class="form-group">
                             <label for="city">Multiple Select</label>
                             @php
                                 

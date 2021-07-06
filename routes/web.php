@@ -46,6 +46,8 @@ Route::get('/prebooking', [PreBookingClientController::class, 'index'])->middlew
 Route::get('/prebooking/{booking}', [PreBookingClientController::class, 'show'])->middleware("guest")->name("prebooking");
 Route::post('/prebooking/{booking}', [PreBookingClientController::class, 'create'])->middleware("guest");
 Route::get('/request', [PreBookingClientController::class, 'request'])->middleware("guest");
+Route::get('/prebooking/{booking}/confirmcity', [PreBookingClientController::class, 'city'])->middleware("guest")->name("confirmcity");
+Route::post('/prebooking/{booking}/confirmcity', [PreBookingClientController::class, 'confirmCity'])->middleware("guest");
 Route::get('/prebooking/{booking}/verify/{user}', [PreBookingClientController::class, 'verify'])->middleware("guest")->name("verify");
 Route::post('/prebooking/{booking}/verify/{user}', [PreBookingClientController::class, 'verified'])->middleware("guest");
 Route::get('/prebooking/{booking}/confirm/{user}', [PreBookingClientController::class, 'confirm'])->middleware("guest")->name("confirm");

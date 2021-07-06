@@ -100,6 +100,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label for="link">Product link</label>
+                                <input type="text" class="form-control" id="link" name="link"
+                                    value="{{ $booking->link }}">
+                            </div>
+                            <div class="form-group">
                                 <label for="city">Select City</label>
                                 @php
                                     $cityMap = json_decode(file_get_contents(getcwd() . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'city.json'), true);

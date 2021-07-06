@@ -39,7 +39,7 @@
                                 <th class="text-center" scope="row">{{ $loop->iteration }}</th>
                                 <td class="font-w600 font-size-sm">
                                     <a class="table-link"
-                                        href="{{ route('prebooking', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
+                                        href="{{ route('confirmcity', ['booking' => $booking->id]) }}">{{ $booking->title }}</a>
                                 </td>
                                 <td class="d-none d-sm-table-cell">
                                 </td>

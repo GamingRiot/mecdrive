@@ -19,6 +19,7 @@ class CreatePreBookingsTable extends Migration
             $table->string('title');
             $table->integer('display');
             $table->integer('real');
+            $table->string('link');
             $table->integer('price')->nullable();
             $table->integer('price_2month')->nullable();
             $table->integer('price_3month')->nullable();
