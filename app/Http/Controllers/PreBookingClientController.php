@@ -52,10 +52,8 @@ class PreBookingClientController extends Controller
         //     return redirect('/request');
         // }
         $bookingCities = explode(',', "$booking->city");
-        if (in_array(request()->input('city'), $bookingCities)) {
-            return redirect('/prebooking/' . $booking->id . '/verify/' . $user->id);
-        }
-        return redirect('/request');
+
+        return redirect('/prebooking/' . $booking->id . '/confirm/' . $user->id);
     }
     public function request()
     {
